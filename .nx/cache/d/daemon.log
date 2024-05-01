@@ -1,143 +1,20 @@
-[NX Daemon Server] - 2024-05-01T16:38:50.624Z - Started listening on: /var/folders/kt/1672cydd62q8w69d6wcflcr40000gn/T/a20cb883438884602ab9/d.sock
-[NX Daemon Server] - 2024-05-01T16:38:50.626Z - [WATCHER]: Subscribed to changes within: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid (native)
-[NX Daemon Server] - 2024-05-01T16:38:50.630Z - Established a connection. Number of open connections: 1
-[NX Daemon Server] - 2024-05-01T16:38:50.630Z - Established a connection. Number of open connections: 2
-[NX Daemon Server] - 2024-05-01T16:38:50.631Z - Closed a connection. Number of open connections: 1
-[NX Daemon Server] - 2024-05-01T16:38:50.632Z - [REQUEST]: Client Request for Project Graph Received
-[NX Daemon Server] - 2024-05-01T16:38:50.643Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:38:50.643Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:38:50.643Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:38:50.667Z - [REQUEST]: Responding to the client. project-graph
-[NX Daemon Server] - 2024-05-01T16:38:50.668Z - Time taken for 'total for creating and serializing project graph' 35.51800000000001ms
-[NX Daemon Server] - 2024-05-01T16:38:50.672Z - Done responding to the client project-graph
-[NX Daemon Server] - 2024-05-01T16:38:50.672Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 35. Response time: 5.
-[NX Daemon Server] - 2024-05-01T16:38:50.674Z - [REQUEST]: Client Request for Project Graph Received
-[NX Daemon Server] - 2024-05-01T16:38:50.675Z - [REQUEST]: Responding to the client. project-graph
-[NX Daemon Server] - 2024-05-01T16:38:50.675Z - Time taken for 'total for creating and serializing project graph' 0.6602090000000089ms
-[NX Daemon Server] - 2024-05-01T16:38:50.676Z - Done responding to the client project-graph
-[NX Daemon Server] - 2024-05-01T16:38:50.676Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 1.
-[NX Daemon Server] - 2024-05-01T16:38:50.678Z - Established a connection. Number of open connections: 2
-[NX Daemon Server] - 2024-05-01T16:38:50.687Z - [WATCHER]: .nx/cache/d/server-process.json was created or restored
-[NX Daemon Server] - 2024-05-01T16:38:50.789Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:38:50.789Z - [REQUEST]: .nx/cache/d/server-process.json
-[NX Daemon Server] - 2024-05-01T16:38:50.790Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:38:50.802Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:38:50.802Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:38:50.802Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
-[NX Daemon Server] - 2024-05-01T16:38:50.802Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.3789999999999907ms
-[NX Daemon Server] - 2024-05-01T16:39:06.454Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:42:01.179Z - [WATCHER]: src/app/app.component.html was modified
-[NX Daemon Server] - 2024-05-01T16:42:01.179Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:42:01.179Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:42:01.179Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
-[NX Daemon Server] - 2024-05-01T16:42:01.179Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:42:01.179Z - Time taken for 'changed-projects' 0.05041699999128468ms
-[NX Daemon Server] - 2024-05-01T16:42:01.381Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:42:01.381Z - [REQUEST]: src/app/app.component.html
-[NX Daemon Server] - 2024-05-01T16:42:01.381Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:42:01.396Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.25833400001283735ms
-[NX Daemon Server] - 2024-05-01T16:42:05.011Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:42:05.747Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:47:32.372Z - [WATCHER]: tailwind.config.js was modified
-[NX Daemon Server] - 2024-05-01T16:47:32.373Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:47:32.374Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:47:32.374Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 1.
-[NX Daemon Server] - 2024-05-01T16:47:32.374Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:47:32.374Z - Time taken for 'changed-projects' 0.020084000017959625ms
-[NX Daemon Server] - 2024-05-01T16:47:32.425Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:47:32.663Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:47:32.775Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:47:32.776Z - [REQUEST]: tailwind.config.js
-[NX Daemon Server] - 2024-05-01T16:47:32.776Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:47:32.789Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.26250000001164153ms
-[NX Daemon Server] - 2024-05-01T16:48:52.954Z - [WATCHER]: src/app/app.component.html was modified
-[NX Daemon Server] - 2024-05-01T16:48:52.954Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:48:52.954Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:48:52.954Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
-[NX Daemon Server] - 2024-05-01T16:48:52.954Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:48:52.954Z - Time taken for 'changed-projects' 0.022166999988257885ms
-[NX Daemon Server] - 2024-05-01T16:48:53.756Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:48:53.756Z - [REQUEST]: src/app/app.component.html
-[NX Daemon Server] - 2024-05-01T16:48:53.756Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:48:53.770Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.21987499995157123ms
-[NX Daemon Server] - 2024-05-01T16:48:57.926Z - [WATCHER]: src/app/app.component.html was modified
-[NX Daemon Server] - 2024-05-01T16:48:57.926Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:48:57.926Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:48:57.926Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
-[NX Daemon Server] - 2024-05-01T16:48:57.926Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:48:57.926Z - Time taken for 'changed-projects' 0.02412499999627471ms
-[NX Daemon Server] - 2024-05-01T16:48:58.224Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:48:59.530Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:48:59.530Z - [REQUEST]: src/app/app.component.html
-[NX Daemon Server] - 2024-05-01T16:48:59.530Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:48:59.568Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.6188750000437722ms
-[NX Daemon Server] - 2024-05-01T16:51:02.990Z - [WATCHER]: tailwind.config.js was modified
-[NX Daemon Server] - 2024-05-01T16:51:02.990Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:51:02.990Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:51:02.990Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
-[NX Daemon Server] - 2024-05-01T16:51:02.990Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:51:02.990Z - Time taken for 'changed-projects' 0.018959000008180737ms
-[NX Daemon Server] - 2024-05-01T16:51:06.193Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:51:06.193Z - [REQUEST]: tailwind.config.js
-[NX Daemon Server] - 2024-05-01T16:51:06.193Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:51:06.228Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.7552499999292195ms
-[NX Daemon Server] - 2024-05-01T16:54:06.750Z - [WATCHER]: tailwind.config.js was modified
-[NX Daemon Server] - 2024-05-01T16:54:06.750Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:54:06.751Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:54:06.751Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 1.
-[NX Daemon Server] - 2024-05-01T16:54:06.751Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:54:06.751Z - Time taken for 'changed-projects' 0.06174999999348074ms
-[NX Daemon Server] - 2024-05-01T16:54:13.155Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:54:13.156Z - [REQUEST]: tailwind.config.js
-[NX Daemon Server] - 2024-05-01T16:54:13.156Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:54:13.196Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.9702500000130385ms
-[NX Daemon Server] - 2024-05-01T16:55:17.034Z - [WATCHER]: tailwind.config.js was modified
-[NX Daemon Server] - 2024-05-01T16:55:17.035Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:55:17.035Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:55:17.035Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
-[NX Daemon Server] - 2024-05-01T16:55:17.035Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:55:17.035Z - Time taken for 'changed-projects' 0.025332999997772276ms
-[NX Daemon Server] - 2024-05-01T16:55:23.439Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:55:23.439Z - [REQUEST]: tailwind.config.js
-[NX Daemon Server] - 2024-05-01T16:55:23.439Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:55:23.474Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.6426669999491423ms
-[NX Daemon Server] - 2024-05-01T16:55:45.223Z - [WATCHER]: tailwind.config.js was modified
-[NX Daemon Server] - 2024-05-01T16:55:45.223Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:55:45.224Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:55:45.224Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 1.
-[NX Daemon Server] - 2024-05-01T16:55:45.224Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:55:45.224Z - Time taken for 'changed-projects' 0.0395410000346601ms
-[NX Daemon Server] - 2024-05-01T16:55:51.426Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:55:51.625Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:55:51.625Z - [REQUEST]: tailwind.config.js
-[NX Daemon Server] - 2024-05-01T16:55:51.625Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:55:51.642Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.28629199997521937ms
-[NX Daemon Server] - 2024-05-01T16:56:06.077Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [WATCHER]: .gitignore was modified
-[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [REQUEST]: Responding to the client. File watch changed
-[NX Daemon Server] - 2024-05-01T16:57:39.355Z - Done responding to the client File watch changed
-[NX Daemon Server] - 2024-05-01T16:57:39.355Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
-[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [WATCHER]: Processing file changes in outputs
-[NX Daemon Server] - 2024-05-01T16:57:39.355Z - Time taken for 'changed-projects' 0.02470900001935661ms
-[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [WATCHER]: Stopping the watcher for /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid (sources)
-[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [WATCHER]: Stopping the watcher for /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid (outputs)
-[NX Daemon Server] - 2024-05-01T16:57:39.355Z - Server stopped because: "Stopping the daemon the set of ignored files changed (native)"
-[NX Daemon Server] - 2024-05-01T16:57:40.470Z - Started listening on: /var/folders/kt/1672cydd62q8w69d6wcflcr40000gn/T/a20cb883438884602ab9/d.sock
-[NX Daemon Server] - 2024-05-01T16:57:40.472Z - [WATCHER]: Subscribed to changes within: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid (native)
-[NX Daemon Server] - 2024-05-01T16:57:40.473Z - Established a connection. Number of open connections: 1
-[NX Daemon Server] - 2024-05-01T16:57:40.474Z - Established a connection. Number of open connections: 2
-[NX Daemon Server] - 2024-05-01T16:57:40.475Z - Closed a connection. Number of open connections: 1
-[NX Daemon Server] - 2024-05-01T16:57:40.475Z - [REQUEST]: Client Request for Project Graph Received
-[NX Daemon Server] - 2024-05-01T16:57:40.487Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
-[NX Daemon Server] - 2024-05-01T16:57:40.488Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:57:40.488Z - [REQUEST]: 
-[NX Daemon Server] - 2024-05-01T16:57:40.511Z - [REQUEST]: Responding to the client. project-graph
-[NX Daemon Server] - 2024-05-01T16:57:40.512Z - Time taken for 'total for creating and serializing project graph' 35.785124999999994ms
-[NX Daemon Server] - 2024-05-01T16:57:40.515Z - Done responding to the client project-graph
-[NX Daemon Server] - 2024-05-01T16:57:40.515Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 36. Response time: 4.
-[NX Daemon Server] - 2024-05-01T16:57:40.517Z - [REQUEST]: Client Request for Project Graph Received
-[NX Daemon Server] - 2024-05-01T16:57:40.518Z - [REQUEST]: Responding to the client. project-graph
-[NX Daemon Server] - 2024-05-01T16:57:40.518Z - Time taken for 'total for creating and serializing project graph' 0.5436249999999916ms
-[NX Daemon Server] - 2024-05-01T16:57:40.519Z - Done responding to the client project-graph
-[NX Daemon Server] - 2024-05-01T16:57:40.519Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 1.
-[NX Daemon Server] - 2024-05-01T16:57:40.520Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-05-01T17:00:33.333Z - Started listening on: /var/folders/kt/1672cydd62q8w69d6wcflcr40000gn/T/a20cb883438884602ab9/d.sock
+[NX Daemon Server] - 2024-05-01T17:00:33.336Z - [WATCHER]: Subscribed to changes within: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid (native)
+[NX Daemon Server] - 2024-05-01T17:00:33.337Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-05-01T17:00:33.338Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-05-01T17:00:33.339Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-05-01T17:00:33.339Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-05-01T17:00:33.354Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-05-01T17:00:33.355Z - [REQUEST]: 
+[NX Daemon Server] - 2024-05-01T17:00:33.355Z - [REQUEST]: 
+[NX Daemon Server] - 2024-05-01T17:00:33.398Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-05-01T17:00:33.398Z - Time taken for 'total for creating and serializing project graph' 58.53262500000005ms
+[NX Daemon Server] - 2024-05-01T17:00:33.403Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-05-01T17:00:33.403Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 59. Response time: 5.
+[NX Daemon Server] - 2024-05-01T17:00:33.405Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-05-01T17:00:33.405Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-05-01T17:00:33.406Z - Time taken for 'total for creating and serializing project graph' 0.5451669999999922ms
+[NX Daemon Server] - 2024-05-01T17:00:33.406Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-05-01T17:00:33.406Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-05-01T17:00:33.408Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-05-01T17:00:48.569Z - [WATCHER]: Processing file changes in outputs
