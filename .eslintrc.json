@@ -2,7 +2,8 @@
   "root": true,
   "ignorePatterns": ["projects/**/*"],
   "plugins": [
-    "import"
+    "import",
+    "unused-imports"
   ],
   "overrides": [
     {
@@ -36,7 +37,8 @@
             "order": "asc",
             "caseInsensitive": true
           }
-        }]
+        }],
+        "unused-imports/no-unused-imports": "warn"
       }
     },
     {
