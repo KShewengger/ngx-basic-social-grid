@@ -113,3 +113,31 @@
 [NX Daemon Server] - 2024-05-01T16:55:51.625Z - [REQUEST]: 
 [NX Daemon Server] - 2024-05-01T16:55:51.642Z - Time taken for 'Load Nx Plugin: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid/node_modules/nx/src/plugins/project-json/build-nodes/package-json-next-to-project-json' 0.28629199997521937ms
 [NX Daemon Server] - 2024-05-01T16:56:06.077Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [WATCHER]: .gitignore was modified
+[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [REQUEST]: Responding to the client. File watch changed
+[NX Daemon Server] - 2024-05-01T16:57:39.355Z - Done responding to the client File watch changed
+[NX Daemon Server] - 2024-05-01T16:57:39.355Z - Handled FILE-WATCH-CHANGED. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-05-01T16:57:39.355Z - Time taken for 'changed-projects' 0.02470900001935661ms
+[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [WATCHER]: Stopping the watcher for /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid (sources)
+[NX Daemon Server] - 2024-05-01T16:57:39.355Z - [WATCHER]: Stopping the watcher for /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid (outputs)
+[NX Daemon Server] - 2024-05-01T16:57:39.355Z - Server stopped because: "Stopping the daemon the set of ignored files changed (native)"
+[NX Daemon Server] - 2024-05-01T16:57:40.470Z - Started listening on: /var/folders/kt/1672cydd62q8w69d6wcflcr40000gn/T/a20cb883438884602ab9/d.sock
+[NX Daemon Server] - 2024-05-01T16:57:40.472Z - [WATCHER]: Subscribed to changes within: /Users/kristymaealmuete/WebstormProjects/ngx-basic-social-grid (native)
+[NX Daemon Server] - 2024-05-01T16:57:40.473Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-05-01T16:57:40.474Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-05-01T16:57:40.475Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-05-01T16:57:40.475Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-05-01T16:57:40.487Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-05-01T16:57:40.488Z - [REQUEST]: 
+[NX Daemon Server] - 2024-05-01T16:57:40.488Z - [REQUEST]: 
+[NX Daemon Server] - 2024-05-01T16:57:40.511Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-05-01T16:57:40.512Z - Time taken for 'total for creating and serializing project graph' 35.785124999999994ms
+[NX Daemon Server] - 2024-05-01T16:57:40.515Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-05-01T16:57:40.515Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 36. Response time: 4.
+[NX Daemon Server] - 2024-05-01T16:57:40.517Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-05-01T16:57:40.518Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-05-01T16:57:40.518Z - Time taken for 'total for creating and serializing project graph' 0.5436249999999916ms
+[NX Daemon Server] - 2024-05-01T16:57:40.519Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-05-01T16:57:40.519Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2024-05-01T16:57:40.520Z - Established a connection. Number of open connections: 2

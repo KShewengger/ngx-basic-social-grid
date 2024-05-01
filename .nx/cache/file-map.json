@@ -41,84 +41,48 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "src/assets/.gitkeep",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "tsconfig.app.json",
-        "hash": "17337579397915052279"
-      },
-      {
-        "file": "src/app/app.config.ts",
-        "hash": "9134967565547244972"
-      },
-      {
-        "file": "tsconfig.json",
-        "hash": "1649115413602447581"
-      },
-      {
-        "file": "src/assets/styles/components/_panel.scss",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "src/app/app.component.html",
-        "hash": "12649550063534224410"
-      },
-      {
-        "file": "src/assets/styles/themes/_md-theme.scss",
-        "hash": "13386913201630253959"
-      },
-      {
-        "file": "src/assets/styles/main.scss",
-        "hash": "918908709133675318"
-      },
-      {
-        "file": "src/assets/styles/utilities/_colors.scss",
-        "hash": "12576433978448375110"
-      },
-      {
-        "file": "src/app/app.component.ts",
-        "hash": "13631148215103502899"
-      },
-      {
-        "file": ".nx/cache/d/server-process.json",
-        "hash": "13590651784842149122"
-      },
-      {
         "file": ".editorconfig",
         "hash": "6686520031028425313"
       },
       {
-        "file": "src/app/app.routes.ts",
-        "hash": "12397496131277534773"
+        "file": ".eslintrc.json",
+        "hash": "2505082869357248255"
       },
       {
-        "file": "angular.json",
-        "hash": "14422625370606142690"
+        "file": ".gitignore",
+        "hash": "16068901259666567040"
       },
       {
-        "file": "tailwind.config.js",
-        "hash": "10779622394812871533"
+        "file": ".vscode/extensions.json",
+        "hash": "5331566439708925252"
       },
       {
-        "file": "src/favicon.ico",
-        "hash": "3988961587069885523"
+        "file": ".vscode/launch.json",
+        "hash": "17038929134016848735"
       },
       {
-        "file": "package.json",
-        "hash": "6633896525938387499"
+        "file": ".vscode/tasks.json",
+        "hash": "5336636969995539451"
       },
       {
         "file": "README.md",
         "hash": "414012538476096954"
       },
       {
-        "file": ".gitignore",
-        "hash": "13044518069027839699"
+        "file": "angular.json",
+        "hash": "14422625370606142690"
       },
       {
-        "file": "src/index.html",
-        "hash": "8429356085870047969"
+        "file": "package-lock.json",
+        "hash": "9491324214888621693"
+      },
+      {
+        "file": "package.json",
+        "hash": "6633896525938387499"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "12649550063534224410"
       },
       {
         "file": "src/app/app.component.scss",
@@ -129,44 +93,76 @@
         "hash": "237533416119120649"
       },
       {
-        "file": ".vscode/extensions.json",
-        "hash": "5331566439708925252"
+        "file": "src/app/app.component.ts",
+        "hash": "13631148215103502899"
       },
       {
-        "file": "package-lock.json",
-        "hash": "9491324214888621693"
+        "file": "src/app/app.config.ts",
+        "hash": "9134967565547244972"
       },
       {
-        "file": "src/assets/styles/base/_reset.scss",
-        "hash": "9807666640076378363"
+        "file": "src/app/app.routes.ts",
+        "hash": "12397496131277534773"
       },
       {
-        "file": ".eslintrc.json",
-        "hash": "2505082869357248255"
-      },
-      {
-        "file": ".vscode/launch.json",
-        "hash": "17038929134016848735"
+        "file": "src/assets/.gitkeep",
+        "hash": "3244421341483603138"
       },
       {
         "file": "src/assets/styles/base/_palette.scss",
         "hash": "5817570429360901562"
       },
       {
-        "file": ".vscode/tasks.json",
-        "hash": "5336636969995539451"
+        "file": "src/assets/styles/base/_reset.scss",
+        "hash": "9807666640076378363"
       },
       {
-        "file": "tsconfig.spec.json",
-        "hash": "15575553540147145788"
+        "file": "src/assets/styles/base/_typography.scss",
+        "hash": "3233036330615480775"
+      },
+      {
+        "file": "src/assets/styles/components/_panel.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/assets/styles/main.scss",
+        "hash": "918908709133675318"
+      },
+      {
+        "file": "src/assets/styles/themes/_md-theme.scss",
+        "hash": "13386913201630253959"
+      },
+      {
+        "file": "src/assets/styles/utilities/_colors.scss",
+        "hash": "12576433978448375110"
+      },
+      {
+        "file": "src/favicon.ico",
+        "hash": "3988961587069885523"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "8429356085870047969"
       },
       {
         "file": "src/main.ts",
         "hash": "4927504514031276065"
       },
       {
-        "file": "src/assets/styles/base/_typography.scss",
-        "hash": "3233036330615480775"
+        "file": "tailwind.config.js",
+        "hash": "10779622394812871533"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "17337579397915052279"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "1649115413602447581"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "15575553540147145788"
       }
     ],
     "projectFileMap": {}
