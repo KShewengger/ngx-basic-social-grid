@@ -1,0 +1,18 @@
+// Define the mixin
+@mixin create-color-classes($palette, $prefix) {
+  @each $key, $value in $palette {
+    @if type-of($value) != 'map' {
+      .color-#{$prefix}-#{$key} {
+        color: $value;
+      }
+      .bg-#{$prefix}-#{$key} {
+        background-color: $value;
+      }
+    }
+  }
+}
+
+// Use the mixin for each color palette
+@include create-color-classes($custom-primary-palette, 'primary');
+@include create-color-classes($custom-secondary-palette, 'secondary');
+@include create-color-classes($custom-accent-palette, 'accent');
