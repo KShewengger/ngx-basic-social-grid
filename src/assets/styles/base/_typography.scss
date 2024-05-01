@@ -1,0 +1,59 @@
+$custom-typography: mat.define-typography-config(
+  $headline-1: mat.define-typography-level(
+      32px,
+      40px,
+      600,
+    $font-family: 'Montserrat, sans-serif'
+  ),
+  $headline-2: mat.define-typography-level(
+      24px,
+      30px,
+      600
+  ),
+  $headline-3: mat.define-typography-level(
+      20px,
+      28px,
+      500
+  ),
+  $headline-4: mat.define-typography-level(
+      18px,
+      26px,
+      500
+  ),
+  $headline-5: mat.define-typography-level(
+      16px,
+      24px,
+      400
+  ),
+  $headline-6: mat.define-typography-level(
+      14px,
+      20px,
+      400
+  ),
+  $body-1: mat.define-typography-level(
+      16px,
+      24px,
+      400
+  ),
+  $body-2: mat.define-typography-level(
+      14px,
+      20px,
+      400
+  ),
+  $button: mat.define-typography-level(
+      14px,
+      20px,
+      400
+  ),
+  $caption: mat.define-typography-level(
+      12px,
+      16px,
+      300
+  ),
+  $overline: mat.define-typography-level(
+      10px,
+      16px,
+      300,
+    $letter-spacing: 1px
+  )
+);
