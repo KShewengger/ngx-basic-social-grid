@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'sg-app-root',
   standalone: true,
-  imports: [RouterOutlet, MatButtonModule],
-  templateUrl: 'app.component.html',
-  styleUrl: 'app.component.scss'
+  imports: [RouterOutlet],
+  template: '<router-outlet />',
 })
-export class AppComponent {
-  title = 'ngx-basic-social-grid';
-}
+export class AppComponent {}
