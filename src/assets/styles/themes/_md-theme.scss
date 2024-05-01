@@ -1,0 +1,23 @@
+@import '../base/palette';
+@import '../base/typography';
+
+@include mat.core();
+
+$custom-primary: mat.define-palette($custom-primary-palette, 800, 700, 900);
+$custom-accent: mat.define-palette($custom-secondary-palette, 800, 700, 900);
+$custom-warn: mat.define-palette($custom-accent-palette, 800, 700, 900);
+
+
+// Custom Theme
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: $custom-primary,
+    accent: $custom-accent,
+    warn: $custom-warn,
+  ),
+  typography: $custom-typography
+));
+
+@include mat.typography-hierarchy($custom-typography);
+@include mat.all-component-themes($custom-theme);
+
