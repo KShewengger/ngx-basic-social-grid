@@ -1,9 +1,12 @@
 @use '@angular/material' as mat;
 
-@import 'themes/md-theme';
-
+@import 'tailwindcss/base';
 @import 'base/reset';
 
-@import 'utilities/colors';
+@import 'themes/md-theme';
 
+@import 'tailwindcss/components';
 @import 'components/panel';
+
+@import 'tailwindcss/utilities';
+@import 'utilities/colors';
