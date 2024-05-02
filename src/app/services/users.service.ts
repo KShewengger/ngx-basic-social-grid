@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Api } from '@app/core/enums';
-
-import { User } from '../models';
-import { JSON_PLACEHOLDER_API } from '../tokens';
+import { JSON_PLACEHOLDER_API } from '@app/constants';
+import { Api, User } from '@app/models';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {

@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { JSON_PLACEHOLDER_API } from '@app/core';
-import { Api } from '@app/core/enums';
-
-import { Post } from '../models';
+import { JSON_PLACEHOLDER_API } from '@app/constants';
+import { Api, Post } from '@app/models';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
