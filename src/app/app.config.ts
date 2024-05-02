@@ -4,6 +4,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideRouter, TitleStrategy } from '@angular/router';
 import { JSON_PLACEHOLDER_API } from '@app/constants';
 import { AppActions, appProviders } from '@app/states/app';
+import { usersProviders } from '@app/states/users';
 import { environment } from '@environments/environment';
 import { provideRouterStore } from '@ngrx/router-store';
 import { provideStore, Store } from '@ngrx/store';
@@ -27,6 +28,7 @@ export const appConfig: ApplicationConfig = {
     }),
     ...appProviders,
     ...postsProviders,
+    ...usersProviders,
     {
       provide: APP_INITIALIZER,
       useFactory: (store = inject(Store)) => () => {

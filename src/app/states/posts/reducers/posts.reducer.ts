@@ -12,12 +12,12 @@ const initialState = postsAdapter.getInitialState({
 export const reducer = createReducer(
   initialState,
   on(PostsActions.loadPosts, (state) => ({ ...state, loading: true })),
-  on(PostsActions.loadPostsDone, (state, { posts }) => {
+  on(PostsActions.loadPostsSuccess, (state, { posts }) => {
     return postsAdapter.setAll(posts, { ...state, loading: false });
   }),
-  on(PostsActions.loadPostsFailed, (state) => ({ ...state, loading: false })),
+  on(PostsActions.loadPostsFailure, (state) => ({ ...state, loading: false })),
 
-  on(PostsActions.loadPostDone, (state, { post }) => {
+  on(PostsActions.loadPostSuccess, (state, { post }) => {
     return postsAdapter.updateOne({
       id: post.id,
       changes: post

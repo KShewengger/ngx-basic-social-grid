@@ -12,8 +12,8 @@ export const loadPostsEffect = createEffect((
     ofType(PostsActions.loadPosts),
     switchMap(() =>
       postsService.fetchPosts().pipe(
-        map(posts => PostsActions.loadPostsDone(posts)),
-        catchError(() => [PostsActions.loadPostsFailed()])
+        map(posts => PostsActions.loadPostsSuccess(posts)),
+        catchError(() => [PostsActions.loadPostsFailure()])
       )
     ),
   );
@@ -27,7 +27,7 @@ export const loadPostEffect = createEffect((
     ofType(PostsActions.loadPost),
     switchMap(({ id }) =>
       postsService.fetchPost(id).pipe(
-        map(post => PostsActions.loadPostDone(post)),
+        map(post => PostsActions.loadPostSuccess(post)),
       )
     ),
   );

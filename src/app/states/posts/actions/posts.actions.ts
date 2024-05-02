@@ -5,10 +5,10 @@ export const PostsActions = createActionGroup({
   source: 'Posts',
   events: {
     loadPosts: emptyProps(),
-    loadPostsDone: (posts: Post[]) => ({ posts }),
-    loadPostsFailed: emptyProps(),
+    loadPostsSuccess: (posts: Post[]) => ({ posts }),
+    loadPostsFailure: emptyProps(),
 
     loadPost: (id: Post['id']) => ({ id }),
-    loadPostDone: (post: Post) => ({ post }),
+    loadPostSuccess: (post: Post) => ({ post }),
   },
 });
