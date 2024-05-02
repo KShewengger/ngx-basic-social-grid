@@ -33,6 +33,7 @@
       "@features/photos": ["./src/app/features/photos/index.ts"],
       "@features/profile": ["./src/app/features/profile/index.ts"],
       "@features/posts": ["./src/app/features/posts/index.ts"],
+      "@states/posts": ["./src/app/states/posts/index.ts"],
     }
   },
   "angularCompilerOptions": {
