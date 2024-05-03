@@ -1,6 +1,8 @@
+import { PostUser } from '@app/models';
 import { PostsActions } from '@app/states/posts/actions';
 import { getPostsStateSelectors } from '@app/states/posts/selectors';
-import { createFeature, createReducer, on } from '@ngrx/store';
+import { usersFeature } from '@app/states/users/reducers';
+import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 
 import { postsAdapter } from '../adapters';
 
@@ -30,5 +32,36 @@ export const postsFeature = createFeature({
   reducer,
   extraSelectors: ({
     selectPostsState,
-  }) => getPostsStateSelectors(selectPostsState)
+  }) => {
+    const commonSelectors = getPostsStateSelectors(selectPostsState);
+
+    const selectPostsWithUsers = createSelector(
+      commonSelectors.selectAllPosts,
+      usersFeature.selectUserEntities,
+      (posts, userEntities) => {
+        return posts.map<PostUser>((post) => {
+          const user = userEntities[post.userId];
+          return {
+            ...post,
+            user: user ? {
+              id: user.id,
+              name: user.name,
+              email: user.email,
+            } : null,
+          };
+        });
+      }
+    );
+
+    const selectPostWithUser = (id: PostUser['id']) => createSelector(
+      selectPostsWithUsers,
+      (posts) => posts.find(post => post.id === id)
+    );
+
+    return {
+      ...commonSelectors,
+      selectPostsWithUsers,
+      selectPostWithUser
+    };
+  }
 });

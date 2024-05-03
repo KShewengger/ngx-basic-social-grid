@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { UserSchema } from './user.model';
+import { UserSummarySchema } from './user.model';
 
 export const AlbumSchema = z.object({
   userId: z.number(),
@@ -11,7 +11,7 @@ export const AlbumSchema = z.object({
 export const AlbumUserSchema = AlbumSchema
   .omit({ userId: true })
   .extend({
-    user: UserSchema.pick({ id: true, name: true, email: true }).or(z.null())
+    user: UserSummarySchema
   });
 
 export type Album = z.infer<typeof AlbumSchema>;

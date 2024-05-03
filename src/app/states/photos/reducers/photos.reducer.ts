@@ -46,9 +46,16 @@ export const photosFeature = createFeature({
       }
     );
 
+    const selectPhotoAlbumWithAuthor = (id: Photo['id']) => createSelector(
+      selectAlbumPhotosWithAuthors(id),
+      (photos) => photos.find(photo => photo.id === id)
+    );
+
+
     return {
       ...commonSelectors,
       selectAlbumPhotosWithAuthors,
+      selectPhotoAlbumWithAuthor,
     };
   }
 });

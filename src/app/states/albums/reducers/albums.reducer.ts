@@ -1,4 +1,4 @@
-import { AlbumUser } from '@app/models';
+import { Album, AlbumUser } from '@app/models';
 import { usersFeature } from '@app/states/users/reducers';
 import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 
@@ -62,11 +62,17 @@ export const albumsFeature = createFeature({
       (albumsEntities) => albumsEntities[id]
     );
 
+    const selectUserAlbums = (userId: Album['userId']) => createSelector(
+      selectAlbumsWithUsers,
+      (albums) => albums.filter(album => album.user?.id === userId)
+    );
+
     return {
       ...commonSelectors,
       selectAlbumsWithUsers,
       selectAlbumsWithUsersEntities,
-      selectAlbumWithUser
+      selectAlbumWithUser,
+      selectUserAlbums,
     };
   }
 });

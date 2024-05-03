@@ -30,4 +30,7 @@ export const UserSchema = z.object({
   company: CompanySchema
 });
 
+export const UserSummarySchema = UserSchema.pick({ id: true, name: true, email: true }).or(z.null());
+
 export type User = z.infer<typeof UserSchema>;
+export type UserSummary = z.infer<typeof UserSummarySchema>;
