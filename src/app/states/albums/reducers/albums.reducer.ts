@@ -1,4 +1,6 @@
-import { createFeature, createReducer, on } from '@ngrx/store';
+import { AlbumUser } from '@app/models';
+import { usersFeature } from '@app/states/users/reducers';
+import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 
 import { AlbumsActions } from '../actions';
 import { albumsAdapter } from '../adapters';
@@ -27,5 +29,44 @@ export const albumsFeature = createFeature({
   reducer,
   extraSelectors: ({
     selectAlbumsState,
-  }) => getAlbumsStateSelectors(selectAlbumsState)
+  }) => {
+    const commonSelectors = getAlbumsStateSelectors(selectAlbumsState);
+
+    const selectAlbumsWithUsers = createSelector(
+      commonSelectors.selectAllAlbums,
+      usersFeature.selectUserEntities,
+      (albums, userEntities) => {
+        return albums.map<AlbumUser>((album) => {
+          const user = userEntities[album.userId];
+          return {
+            ...album,
+            user: user ? {
+              id: user.id,
+              name: user.name,
+              email: user.email,
+            } : null,
+          };
+        });
+      }
+    );
+
+    const selectAlbumsWithUsersEntities = createSelector(
+      selectAlbumsWithUsers,
+      (albums) => albums.reduce((acc, album) =>
+        ({ ...acc, [album.id]: album }),
+        {} as Record<number, AlbumUser>)
+    );
+
+    const selectAlbumWithUser = (id: AlbumUser['id']) => createSelector(
+      selectAlbumsWithUsersEntities,
+      (albumsEntities) => albumsEntities[id]
+    );
+
+    return {
+      ...commonSelectors,
+      selectAlbumsWithUsers,
+      selectAlbumsWithUsersEntities,
+      selectAlbumWithUser
+    };
+  }
 });

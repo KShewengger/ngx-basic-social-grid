@@ -1,4 +1,4 @@
-import { Photo } from '@app/models';
+import { Photo, PhotoAlbum } from '@app/models';
 import { albumsFeature } from '@app/states/albums/reducers';
 import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 
@@ -37,9 +37,9 @@ export const photosFeature = createFeature({
 
     const selectAlbumPhotosWithAuthors = (albumId: Photo['albumId']) => createSelector(
       commonSelectors.selectAlbumPhotos(albumId),
-      albumsFeature.selectAlbumEntities,
+      albumsFeature.selectAlbumsWithUsersEntities,
       (photos, albumEntities) => {
-        return photos.map((photo) => ({
+        return photos.map<PhotoAlbum>((photo) => ({
           ...photo,
           album: albumEntities[albumId],
         }));

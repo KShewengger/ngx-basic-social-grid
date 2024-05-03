@@ -19,7 +19,7 @@ const CompanySchema = z.object({
   bs: z.string()
 });
 
-const UserSchema = z.object({
+export const UserSchema = z.object({
   id: z.number(),
   name: z.string(),
   username: z.string(),
