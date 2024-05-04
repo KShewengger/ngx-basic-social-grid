@@ -1,0 +1,8 @@
+.mat-icon {
+  width: 1em !important;
+  height: 1em !important;
+}
+
+.mat-drawer-side {
+  border-right-color: map-get($custom-secondary-palette, 50) !important;
+}
