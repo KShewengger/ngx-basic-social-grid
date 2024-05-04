@@ -1,5 +1,5 @@
 .sidebar {
-  @apply w-52 py-6 flex flex-col justify-between h-full;
+  @apply py-6 flex flex-col justify-between h-full;
 }
 
 .sidebar-header {
@@ -11,7 +11,7 @@
 }
 
 .sidebar-company {
-  @apply flex flex-col;
+  @apply hidden xl:flex flex-col;
 
   &__title {
     @apply text-sm font-bold bg-gradient-to-r from-purple-600 to-purple-800 text-transparent bg-clip-text;
@@ -27,7 +27,7 @@
 }
 
 .menu-item {
-  @apply flex items-center gap-1.5 py-2 mx-3 px-2 rounded text-secondary-600 font-medium cursor-pointer hover:bg-primary-50/50;
+  @apply flex items-center gap-1.5 py-2 mx-3 px-2 rounded text-secondary-600 font-medium cursor-pointer hover:bg-primary-50/50 hover:scale-110;
 
   &--active {
     @apply bg-primary-50 text-primary-500 font-bold hover:bg-primary-50;
@@ -38,12 +38,12 @@
   }
 
   &__label {
-    @apply text-xs;
+    @apply text-xs hidden xl:block;
   }
 }
 
 .sidebar-user {
-  @apply mx-3 flex items-center gap-2.5 border border-secondary-50/50 shadow-sm rounded-md py-2 px-2.5 cursor-pointer hover:bg-primary-50 hover:ring-1 hover:ring-primary-300;
+  @apply cursor-pointer flex items-center gap-2.5 border-secondary-50/50 mx-auto rounded-full border-primary-600 hover:border-2 xl:hover:border xl:mx-3 xl:border xl:shadow-sm xl:rounded-md xl:py-2 xl:px-2.5 xl:hover:bg-primary-50 xl:hover:ring-1 xl:hover:ring-primary-300;
 
   &__avatar {
     @apply w-9 h-9 rounded-full object-contain;
@@ -51,6 +51,8 @@
 }
 
 .sidebar-account {
+  @apply hidden xl:block;
+
   &__name {
     @apply text-xs text-dark-700 font-bold;
   }

@@ -3,7 +3,7 @@
 }
 
 .photos {
-  @apply grid grid-cols-4 gap-4;
+  @apply grid grid-cols-3 gap-4 sm:grid-cols-4;
 }
 
 .photos-header {
@@ -11,10 +11,5 @@
 }
 
 .photo {
-  @apply relative cursor-pointer gap-2;
-
-  &::before {
-    content: '';
-    @apply absolute w-full h-full bg-primary-50/40 hover:bg-transparent;
-  }
+  @apply relative cursor-pointer gap-2 hover:scale-105 rounded-md overflow-hidden;
 }

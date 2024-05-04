@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
@@ -11,6 +12,7 @@ import { UsersFacade } from '@states/users';
   templateUrl: 'app.component.html',
   styleUrl: 'app.component.scss',
   imports: [
+    NgClass,
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
