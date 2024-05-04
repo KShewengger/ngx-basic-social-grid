@@ -16,6 +16,7 @@ export class DashboardPostsComponent {
   private postsFacade = inject(PostsFacade);
 
   public posts = this.postsFacade.topPosts;
+  public totalPosts = this.postsFacade.totalTopPosts;
 
   public readonly postIcon = platformIconMapper[Source.Posts];
 }

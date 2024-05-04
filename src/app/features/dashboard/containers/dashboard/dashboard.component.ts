@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { DashboardMetricsComponent, DashboardPostsComponent } from '../../components';
+import { DashboardMetricsComponent, DashboardPhotosComponent, DashboardPostsComponent } from '../../components';
 
 @Component({
   standalone: true,
@@ -8,6 +8,6 @@ import { DashboardMetricsComponent, DashboardPostsComponent } from '../../compon
   templateUrl: 'dashboard.component.html',
   styleUrl: 'dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [DashboardMetricsComponent, DashboardPostsComponent],
+  imports: [DashboardMetricsComponent, DashboardPostsComponent, DashboardPhotosComponent],
 })
 export class DashboardComponent {}
