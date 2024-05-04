@@ -1,12 +1,8 @@
-import { NgClass, SlicePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
-import { metricsMapper } from '@app/features/dashboard/utils';
-import { Source } from '@app/models';
-import { PhotosFacade } from '@app/states/photos';
-import { AlbumsFacade } from '@states/albums';
-import { PostsFacade } from '@states/posts';
+
+import { DashboardMetricsComponent } from '../../components';
 
 @Component({
   standalone: true,
@@ -14,22 +10,6 @@ import { PostsFacade } from '@states/posts';
   templateUrl: 'dashboard.component.html',
   styleUrl: 'dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgClass, MatCard, MatCardContent, MatIcon, SlicePipe],
+  imports: [MatCard, MatCardContent, MatIcon, DashboardMetricsComponent],
 })
-export class DashboardComponent {
-  private postsFacade = inject(PostsFacade);
-  private albumsFacade = inject(AlbumsFacade);
-  private photosFacade = inject(PhotosFacade);
-
-  public readonly Source = Source;
-
-  public totalTopPosts = this.postsFacade.totalTopPosts;
-  public totalTopAlbums = this.albumsFacade.totalTopAlbums;
-  public totalTopPhotos = this.photosFacade.totalTopPhotos;
-
-  public metrics = computed(() => ([
-    metricsMapper(Source.Posts, this.totalTopPosts()),
-    metricsMapper(Source.Albums, this.totalTopAlbums()),
-    metricsMapper(Source.Photos, this.totalTopPhotos()),
-  ]));
-}
+export class DashboardComponent {}
