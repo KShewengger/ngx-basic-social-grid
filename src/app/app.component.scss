@@ -1,5 +1,5 @@
 .sidebar {
-  @apply w-40 py-6;
+  @apply w-48 py-6 flex flex-col justify-between h-full;
 }
 
 .sidebar-header {
@@ -39,5 +39,23 @@
 
   &__label {
     @apply text-xs;
+  }
+}
+
+.sidebar-user {
+  @apply mx-3 flex items-center gap-2.5 border border-secondary-50 shadow-sm rounded-md py-2 px-2.5 cursor-pointer bg-primary-50 ring-1 ring-primary-100 hover:ring-primary-200;
+
+  &__avatar {
+    @apply w-9 h-9 rounded-full object-contain;
+  }
+}
+
+.sidebar-account {
+  &__name {
+    @apply text-xs text-dark-800 font-bold;
+  }
+
+  &__email {
+    @apply text-xs text-secondary-500;
   }
 }

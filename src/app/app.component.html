@@ -1,27 +1,42 @@
 <mat-sidenav-container class="h-full">
   <mat-sidenav mode="side" opened fixedInViewport>
     <div class="sidebar">
-      <div class="sidebar-header">
-        <mat-icon class="sidebar-header__logo" fontIcon="view_timeline"></mat-icon>
-        <p class="sidebar-company">
-          <span class="sidebar-company__title">Social Grid</span>
-          <span class="sidebar-company__subtitle">Workspace</span>
-        </p>
+      <div>
+        <div class="sidebar-header">
+          <mat-icon class="sidebar-header__logo" fontIcon="view_timeline"></mat-icon>
+          <p class="sidebar-company">
+            <span class="sidebar-company__title">Social Grid</span>
+            <span class="sidebar-company__subtitle">Workspace</span>
+          </p>
+        </div>
+
+        <ol class="sidebar-menu">
+          @for (item of navigationItems; track $index) {
+            <li
+              class="menu-item"
+              routerLinkActive="menu-item--active"
+              [routerLink]="[item.path]"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <mat-icon class="menu-item__icon" [fontIcon]="item.icon"></mat-icon>
+              <span class="menu-item__label">{{ item.label }}</span>
+            </li>
+          }
+        </ol>
       </div>
 
-      <ol class="sidebar-menu">
-        @for (item of navigationItems; track $index) {
-          <li
-            class="menu-item"
-            routerLinkActive="menu-item--active"
-            [routerLink]="[item.path]"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <mat-icon class="menu-item__icon" [fontIcon]="item.icon"></mat-icon>
-            <span class="menu-item__label">{{ item.label }}</span>
-          </li>
-        }
-      </ol>
+      <div class="sidebar-user">
+        <img
+          class="sidebar-user__avatar"
+          alt="user-avatar"
+          src="assets/images/custom/avatar.jpg"
+        />
+
+        <div class="sidebar-account">
+          <p class="sidebar-account__name">John Doe</p>
+          <p class="sidebar-account__email">john</p>
+        </div>
+      </div>
     </div>
   </mat-sidenav>
 
