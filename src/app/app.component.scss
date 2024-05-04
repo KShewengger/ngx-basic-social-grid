@@ -43,7 +43,7 @@
 }
 
 .sidebar-user {
-  @apply mx-3 flex items-center gap-2.5 border border-secondary-50 shadow-sm rounded-md py-2 px-2.5 cursor-pointer bg-primary-50/80 ring-1 ring-primary-100 hover:ring-primary-200;
+  @apply mx-3 flex items-center gap-2.5 border border-secondary-50 shadow-sm rounded-md py-2 px-2.5 cursor-pointer bg-primary-50 ring-1 ring-primary-100 hover:ring-primary-200;
 
   &__avatar {
     @apply w-9 h-9 rounded-full object-contain;
@@ -55,7 +55,7 @@
     @apply text-xs text-dark-700 font-bold;
   }
 
-  &__email {
-    @apply text-xs text-dark-300/90 truncate max-w-28;
+  &__view {
+    @apply text-[11px] text-dark-300 truncate max-w-28;
   }
 }

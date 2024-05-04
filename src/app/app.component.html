@@ -34,13 +34,13 @@
 
         <div class="sidebar-account">
           <p class="sidebar-account__name">{{ userName() }}</p>
-          <p class="sidebar-account__email">{{ userEmail() }}</p>
+          <p class="sidebar-account__view">View Profile</p>
         </div>
       </div>
     </div>
   </mat-sidenav>
 
-  <mat-sidenav-content class="p-6">
+  <mat-sidenav-content class="p-6 bg-primary-50/50">
     <router-outlet />
   </mat-sidenav-content>
 </mat-sidenav-container>
