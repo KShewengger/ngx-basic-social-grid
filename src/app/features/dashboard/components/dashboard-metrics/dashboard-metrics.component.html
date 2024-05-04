@@ -6,16 +6,11 @@
           class="metric"
           [ngClass]="{ 'metric--bordered': $index === 1, 'pr-3': $last }"
         >
-          <div
-            class="metric__icon"
-            [ngClass]="{
-              'metric__icon--posts': metric.label === Source.Posts,
-              'metric__icon--albums': metric.label === Source.Albums,
-              'metric__icon--photos': metric.label === Source.Photos
-            }"
+          <img
+            alt="metric-logo"
+            class="w-12 h-12 object-cover"
+            [src]="metric.icon"
           >
-            <mat-icon [fontIcon]="metric.icon" />
-          </div>
 
           <div class="metric-info">
             <span class="metric-info__title">{{ metric.label }}</span>

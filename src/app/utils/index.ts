@@ -1,2 +1,2 @@
-export * from './platform-icon-mapper';
+export * from './platform-mapper';
 export * from './pluck-unique-entities';

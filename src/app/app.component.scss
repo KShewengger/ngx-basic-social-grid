@@ -6,7 +6,7 @@
   @apply flex items-center gap-2 px-3;
 
   &__logo {
-    @apply text-[2rem] bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text;
+    @apply text-[2rem] bg-gradient-to-l from-purple-500 to-yellow-500 text-transparent bg-clip-text;
   }
 }
 
@@ -46,7 +46,7 @@
   @apply cursor-pointer flex items-center gap-2.5 mx-auto rounded-full border-primary-600 hover:border-2 xl:border-primary-50 xl:hover:border xl:mx-3 xl:border xl:shadow-sm xl:rounded-md xl:py-2 xl:px-2.5 xl:hover:bg-primary-50 xl:hover:ring-1 xl:hover:ring-primary-300;
 
   &__avatar {
-    @apply w-9 h-9 rounded-full object-contain;
+    @apply w-9 h-9 rounded-full object-cover;
   }
 }
 

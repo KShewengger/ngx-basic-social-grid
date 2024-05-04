@@ -1,10 +1,10 @@
 import { Source } from '@app/models';
-import { platformIconMapper } from '@app/utils';
+import { metricImagePathMapper } from '@app/utils';
 
 export function metricsMapper(source: Source, total: number) {
   return {
     label: source,
-    icon: platformIconMapper[source],
+    icon:  metricImagePathMapper[source],
     total
   };
 }

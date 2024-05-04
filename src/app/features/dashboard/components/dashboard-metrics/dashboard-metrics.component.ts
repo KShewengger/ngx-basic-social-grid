@@ -11,16 +11,14 @@ import { PostsFacade } from '@states/posts';
 @Component({
   standalone: true,
   selector: 'sg-dashboard-metrics',
-  templateUrl: './dashboard-metrics.component.html',
-  styleUrl: './dashboard-metrics.component.scss',
+  templateUrl: 'dashboard-metrics.component.html',
+  styleUrl: 'dashboard-metrics.component.scss',
   imports: [NgClass, MatCard, MatCardContent, MatIcon],
 })
 export class DashboardMetricsComponent {
   private postsFacade = inject(PostsFacade);
   private albumsFacade = inject(AlbumsFacade);
   private photosFacade = inject(PhotosFacade);
-
-  public readonly Source = Source;
 
   public totalTopPosts = this.postsFacade.totalTopPosts;
   public totalTopAlbums = this.albumsFacade.totalTopAlbums;
