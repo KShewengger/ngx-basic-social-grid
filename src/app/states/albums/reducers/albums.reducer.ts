@@ -40,11 +40,7 @@ export const albumsFeature = createFeature({
           const user = userEntities[album.userId];
           return {
             ...album,
-            user: user ? {
-              id: user.id,
-              name: user.name,
-              email: user.email,
-            } : null,
+            user: user ?? null,
           };
         });
       }

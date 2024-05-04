@@ -1,0 +1,3 @@
+.post {
+  @apply border-secondary-50/50 [&:not(:last-child)]:border-b py-4
+}

@@ -13,16 +13,6 @@ export function getPostsStateSelectors<T>(
     selectIds: selectPostIds,
   } = postsAdapter.getSelectors(state);
 
-  const selectTopPosts = createSelector(
-    selectAllPosts,
-    (posts) => posts.toSpliced(10)
-  );
-
-  const selectTopPostsTotal = createSelector(
-    selectTopPosts,
-    (topPosts) => topPosts.length
-  );
-
   const selectPostsLoading = createSelector(
     state,
     (postsState) => postsState.loading
@@ -46,7 +36,5 @@ export function getPostsStateSelectors<T>(
     selectPost,
     selectUserPosts,
     selectPostsLoading,
-    selectTopPosts,
-    selectTopPostsTotal,
   };
 }

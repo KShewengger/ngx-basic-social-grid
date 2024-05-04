@@ -3,67 +3,67 @@ $custom-typography: mat.define-typography-config(
       32px,
       40px,
       600,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $headline-2: mat.define-typography-level(
       24px,
       30px,
       600,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $headline-3: mat.define-typography-level(
       20px,
       28px,
       500,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $headline-4: mat.define-typography-level(
       18px,
       26px,
       500,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $headline-5: mat.define-typography-level(
       16px,
       24px,
       400,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $headline-6: mat.define-typography-level(
       14px,
       20px,
       400,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $body-1: mat.define-typography-level(
       16px,
       24px,
       400,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $body-2: mat.define-typography-level(
       14px,
       20px,
       400,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $button: mat.define-typography-level(
       14px,
       20px,
       400,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $caption: mat.define-typography-level(
       12px,
       16px,
       300,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   ),
   $overline: mat.define-typography-level(
       10px,
       16px,
       300,
     $letter-spacing: 1px,
-    $font-family: 'Noto Sans, sans-serif'
+    $font-family: 'Lato, sans-serif'
   )
 );

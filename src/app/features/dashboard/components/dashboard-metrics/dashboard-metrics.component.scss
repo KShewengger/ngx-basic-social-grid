@@ -1,0 +1,39 @@
+.metrics {
+  @apply grid grid-cols-3;
+}
+
+.metric {
+  @apply flex items-center gap-6 justify-center;
+
+  &--bordered {
+    @apply border-x border-secondary-50/50;
+  }
+
+  &__icon {
+    @apply flex items-center p-4 rounded ring-1;
+
+    &--posts {
+      @apply ring-violet-100 bg-violet-50 text-violet-500;
+    }
+
+    &--albums {
+      @apply ring-fuchsia-100 bg-fuchsia-50 text-fuchsia-500;
+    }
+
+    &--photos {
+      @apply ring-orange-100 bg-orange-50 text-orange-500;
+    }
+  }
+}
+
+.metric-info {
+  @apply flex flex-col;
+
+  &__title {
+    @apply uppercase text-[11px] font-medium text-secondary-500;
+  }
+
+  &__total {
+    @apply text-dark-700 text-2xl font-medium;
+  }
+}

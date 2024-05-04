@@ -74,7 +74,7 @@ module.exports = {
 
       },
       fontFamily: {
-        'noto-sans': ['Noto Sans', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif'],
       },
       transitionProperty: {
         dimensions: 'height, width',

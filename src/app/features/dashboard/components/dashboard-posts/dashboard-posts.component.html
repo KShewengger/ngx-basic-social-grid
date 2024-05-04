@@ -1,0 +1,23 @@
+<mat-card class="flex flex-col gap-2 py-2">
+  <mat-card-header>
+    <mat-card-title class="px-4">
+     <div class="flex items-center gap-1">
+       <span class="font-bold">Top Posts</span>
+       <small class="text-secondary-500">(10)</small>
+     </div>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    @for (post of posts(); track post.id) {
+      <div class="post flex flex-col gap-2 px-4">
+        <div class="font-medium">
+          <p class="text-xs text-secondary-500">&#64;{{post.user?.username}}</p>
+          <p class="text-primary-500 text-[13px] capitalize">{{ post.title }}</p>
+        </div>
+
+        <p class="text-sm text-gray-700">{{ post.body }}</p>
+      </div>
+    }
+  </mat-card-content>
+</mat-card>
