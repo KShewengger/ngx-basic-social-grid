@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NAVIGATION_ITEMS } from '@app/constants';
+import { UsersFacade } from '@states/users';
 
 @Component({
   standalone: true,
@@ -12,5 +13,10 @@ import { NAVIGATION_ITEMS } from '@app/constants';
   imports: [RouterOutlet, RouterLink, RouterLinkActive, MatSidenavModule, MatIconModule],
 })
 export class AppComponent {
+  public usersFacade = inject(UsersFacade);
+
+  public userName = this.usersFacade.currentUserName;
+  public userEmail = this.usersFacade.currentUserEmail;
+
   public readonly navigationItems = NAVIGATION_ITEMS;
 }

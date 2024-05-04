@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { computed, inject, Injectable } from '@angular/core';
 import { User } from '@app/models';
 import { Store } from '@ngrx/store';
 
@@ -20,7 +20,19 @@ export class UsersFacade {
     usersFeature.selectTotalUsers
   );
 
+  public currentUser = this.store.selectSignal(
+    usersFeature.selectCurrentUser
+  );
+
   public user = (id: User['id']) => this.store.selectSignal(
     usersFeature.selectUser(id)
+  );
+
+  public currentUserName = computed(() =>
+    this.currentUser().name
+  );
+
+  public currentUserEmail = computed(() =>
+    this.currentUser().email
   );
 }

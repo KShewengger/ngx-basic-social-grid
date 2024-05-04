@@ -24,12 +24,22 @@ export function getUsersStateSelectors<T>(
     (Users) => Users[id]
   );
 
+  const selectCurrentUser = createSelector(
+    selectAllUsers,
+    (users) => ({
+      ...users[0],
+      name: 'Kristy Almuete',
+      email: 'kristy@gmail.com'
+    })
+  );
+
   return {
     selectAllUsers,
     selectUserEntities,
     selectTotalUsers,
     selectUserIds,
     selectUser,
-    selectUsersLoading
+    selectUsersLoading,
+    selectCurrentUser,
   };
 }
