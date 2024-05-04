@@ -31,8 +31,4 @@ export class UsersFacade {
   public currentUserName = computed(() =>
     this.currentUser().name
   );
-
-  public currentUserEmail = computed(() =>
-    this.currentUser().email
-  );
 }
