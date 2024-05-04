@@ -1,3 +1,23 @@
+.posts {
+  @apply flex flex-col gap-2 py-2;
+}
+
+.posts-header {
+  @apply flex items-center gap-1;
+}
+
 .post {
-  @apply border-secondary-50/50 [&:not(:last-child)]:border-b py-4
+  @apply flex flex-col gap-2 px-4 border-secondary-50/50 [&:not(:last-child)]:border-b py-4;
+
+  &__username {
+    @apply text-xs text-secondary-500;
+  }
+
+  &__title {
+    @apply text-primary-500 text-[13px] capitalize;
+  }
+
+  &__body {
+    @apply text-sm text-gray-700;
+  }
 }
