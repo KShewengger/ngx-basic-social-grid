@@ -1,26 +1,25 @@
+import { Source } from '@app/models';
+import { platformIconMapper } from '@app/utils';
+
 export const NAVIGATION_ITEMS = [
   {
-    label: 'Dashboard',
-    path: 'dashboard',
-    icon: 'table_chart_view',
-    isActive: true,
+    label: Source.Dashboard,
+    path: Source.Dashboard,
+    icon: platformIconMapper[Source.Dashboard],
   },
   {
-    label: 'Posts',
-    path: 'posts',
-    icon: 'sticky_note_2',
-    isActive: false,
+    label: Source.Posts,
+    path: Source.Posts,
+    icon: platformIconMapper[Source.Posts],
   },
   {
-    label: 'Albums',
-    path: 'albums',
-    icon: 'photo_library',
-    isActive: false,
+    label: Source.Albums,
+    path: Source.Albums,
+    icon: platformIconMapper[Source.Albums],
   },
   {
-    label: 'Photos',
-    path: 'photos',
-    icon: 'image',
-    isActive: false,
+    label: Source.Photos,
+    path: Source.Photos,
+    icon: platformIconMapper[Source.Photos],
   },
 ];

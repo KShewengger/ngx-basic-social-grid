@@ -19,6 +19,14 @@ export class PostsFacade {
     postsFeature.selectTotalPosts
   );
 
+  public topPosts = this.store.selectSignal(
+    postsFeature.selectTopPosts
+  );
+
+  public totalTopPosts = this.store.selectSignal(
+    postsFeature.selectTopPostsTotal
+  );
+
   public post = (id: Post['id']) => this.store.selectSignal(
     postsFeature.selectPost(id)
   );

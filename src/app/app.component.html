@@ -3,7 +3,7 @@
     <div class="sidebar">
       <div>
         <div class="sidebar-header">
-          <mat-icon class="sidebar-header__logo" fontIcon="view_timeline"></mat-icon>
+          <mat-icon class="sidebar-header__logo" fontIcon="view_timeline" />
           <p class="sidebar-company">
             <span class="sidebar-company__title">Social Grid</span>
             <span class="sidebar-company__subtitle">Workspace</span>
@@ -18,8 +18,8 @@
               [routerLink]="[item.path]"
               [routerLinkActiveOptions]="{ exact: true }"
             >
-              <mat-icon class="menu-item__icon" [fontIcon]="item.icon"></mat-icon>
-              <span class="menu-item__label">{{ item.label }}</span>
+              <mat-icon class="menu-item__icon" [fontIcon]="item.icon" />
+              <span class="menu-item__label capitalize">{{ item.label }}</span>
             </li>
           }
         </ol>

@@ -14,6 +14,16 @@ export function getPhotosStateSelectors<T>(
     selectIds: selectPhotoIds,
   } = photosAdapter.getSelectors(state);
 
+  const selectTopPhotos = createSelector(
+    selectAllPhotos,
+    (photos) => photos.toSpliced(12)
+  );
+
+  const selectTopPhotosTotal = createSelector(
+    selectTopPhotos,
+    (topPhotos) => topPhotos.length
+  );
+
   const selectPhotosLoading = createSelector(
     state,
     (PhotosState) => PhotosState.loading
@@ -36,6 +46,8 @@ export function getPhotosStateSelectors<T>(
     selectPhotoIds,
     selectPhoto,
     selectAlbumPhotos,
-    selectPhotosLoading
+    selectPhotosLoading,
+    selectTopPhotos,
+    selectTopPhotosTotal,
   };
 }

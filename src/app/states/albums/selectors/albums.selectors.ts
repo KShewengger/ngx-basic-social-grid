@@ -14,6 +14,16 @@ export function getAlbumsStateSelectors<T>(
     selectIds: selectAlbumIds,
   } = albumsAdapter.getSelectors(state);
 
+  const selectTopAlbums = createSelector(
+    selectAllAlbums,
+    (albums) => albums.toSpliced(7)
+  );
+
+  const selectTopAlbumsTotal = createSelector(
+    selectTopAlbums,
+    (topAlbums) => topAlbums.length
+  );
+
   const selectAlbumsLoading = createSelector(
     state,
     (state) => state.loading
@@ -30,6 +40,8 @@ export function getAlbumsStateSelectors<T>(
     selectTotalAlbums,
     selectAlbumIds,
     selectAlbum,
-    selectAlbumsLoading
+    selectAlbumsLoading,
+    selectTopAlbums,
+    selectTopAlbumsTotal,
   };
 }

@@ -20,6 +20,14 @@ export class AlbumsFacade {
     albumsFeature.selectTotalAlbums
   );
 
+  public topAlbums = this.store.selectSignal(
+    albumsFeature.selectTopAlbums
+  );
+
+  public totalTopAlbums = this.store.selectSignal(
+    albumsFeature.selectTopAlbumsTotal
+  );
+
   public album = (id: Album['id']) => this.store.selectSignal(
     albumsFeature.selectAlbum(id)
   );

@@ -19,6 +19,14 @@ export class PhotosFacade {
     photosFeature.selectTotalPhotos
   );
 
+  public topPhotos = this.store.selectSignal(
+    photosFeature.selectTopPhotos
+  );
+
+  public totalTopPhotos = this.store.selectSignal(
+    photosFeature.selectTopPhotosTotal
+  );
+
   public photo = (id: Photo['id']) => this.store.selectSignal(
     photosFeature.selectPhoto(id)
   );
