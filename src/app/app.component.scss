@@ -65,3 +65,7 @@
     @apply text-[11px] text-dark-600 truncate max-w-28;
   }
 }
+
+.main-content {
+  @apply p-4 py-6 bg-primary-50/50;
+}
