@@ -3,7 +3,7 @@
 }
 
 .sidebar-header {
-  @apply flex items-center gap-2 px-3;
+  @apply flex items-center gap-2 px-3 cursor-pointer;
 
   &__logo {
     @apply text-[2rem] bg-gradient-to-l from-purple-500 to-yellow-500 text-transparent bg-clip-text;

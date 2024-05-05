@@ -1,4 +1,4 @@
-import { Photo, PhotoAlbum } from '@app/models';
+import { Album, Photo, PhotoAlbum } from '@app/models';
 import { albumsFeature } from '@app/states/albums/reducers';
 import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 
@@ -50,6 +50,11 @@ export const photosFeature = createFeature({
         }
       );
 
+    const selectUserAlbumPhotos = (albumId: Album['id'], userId: Album['userId']) =>
+      createSelector(selectAlbumPhotosWithAuthors(albumId), (photos) =>
+        photos.filter((photo) => photo.album.user?.id === userId)
+      );
+
     const selectPhotoAlbumWithAuthor = (id: Photo['id']) =>
       createSelector(selectAlbumPhotosWithAuthors(id), (photos) =>
         photos.find((photo) => photo.id === id)
@@ -58,7 +63,8 @@ export const photosFeature = createFeature({
     return {
       ...commonSelectors,
       selectAlbumPhotosWithAuthors,
-      selectPhotoAlbumWithAuthor
+      selectPhotoAlbumWithAuthor,
+      selectUserAlbumPhotos
     };
   }
 });

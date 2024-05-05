@@ -1,6 +1,6 @@
 <div class="profile">
   <div class="profile-info">
-    <mat-card>
+    <mat-card class="profile-info__wrapper">
       <div class="profile-avatar">
         <img
           src="assets/images/custom/avatar.jpg"
@@ -15,13 +15,13 @@
       </div>
     </mat-card>
 
-    <mat-card>
+    <mat-card class="profile-card">
       <mat-card-header>
-        <p class="font-bold">Personal Information</p>
+        <p class="profile-card__title">Personal Information</p>
       </mat-card-header>
 
       <mat-card-content>
-        <div class="profile-card">
+        <div class="profile-card__content">
           <div class="profile-item">
             <p class="profile-item__field">Name</p>
             <p class="profile-item__value">{{ currentUser().name }}</p>
@@ -50,15 +50,18 @@
       </mat-card-content>
     </mat-card>
 
-    <mat-card>
+    <mat-card class="profile-card">
       <mat-card-header>
-        <p class="font-bold">Posts</p>
+        <p class="profile-card__title">Posts</p>
       </mat-card-header>
 
       <mat-card-content>
-        <div class="profile-card">
+        <div class="profile-card__content">
           @for (post of posts(); track post.id) {
-            <div class="post !border-0">
+            <div
+              class="post !border-0"
+              [ngClass]="{'bg-primary-50/50': $first}"
+            >
               <div class="font-medium">
                 <p class="post__title">{{ post.title }}</p>
               </div>
@@ -70,14 +73,24 @@
       </mat-card-content>
     </mat-card>
 
-    <mat-card>
+    <mat-card class="profile-card">
       <mat-card-header>
-        <p class="font-bold">Albums</p>
+        <p class="profile-card__title">Albums</p>
       </mat-card-header>
 
       <mat-card-content>
-        <div class="profile-card">
-          Albums
+        <div class="grid grid-cols-3 gap-6">
+          @for(album of albums(); track album.id) {
+            <div class="album flex flex-col items-center gap-1 cursor-pointer group hover:scale-105">
+              <img
+                alt="cover-image"
+                class="rounded-md opacity-70 group-hover:opacity-100"
+                [src]="albumPhotos(album.id)()[0].thumbnailUrl"
+              >
+              <span class="text-gray-700 text-sm capitalize w-36 truncate group-hover:text-primary-500 group-hover:font-bold">{{ album.title }}</span>
+              <span class="text-xs text-secondary-700">{{ albumPhotos(album.id)().length }} photos</span>
+            </div>
+          }
         </div>
       </mat-card-content>
     </mat-card>

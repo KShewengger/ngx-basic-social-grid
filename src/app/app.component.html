@@ -2,7 +2,10 @@
   <mat-sidenav opened mode="side" class="!w-14 xl:!w-52">
     <div class="sidebar">
       <div>
-        <div class="sidebar-header">
+        <div
+          class="sidebar-header"
+          [routerLink]="['dashboard']"
+        >
           <mat-icon class="sidebar-header__logo" fontIcon="view_timeline" />
           <p class="sidebar-company">
             <span class="sidebar-company__title">Social Grid</span>

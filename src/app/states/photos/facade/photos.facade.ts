@@ -20,5 +20,5 @@ export class PhotosFacade {
   public photo = (id: Photo['id']) => this.store.selectSignal(photosFeature.selectPhoto(id));
 
   public albumPhotos = (albumId: Photo['albumId']) =>
-    this.store.selectSignal(photosFeature.selectAlbumPhotos(albumId));
+    this.store.selectSignal(photosFeature.selectAlbumPhotos(albumId))();
 }
