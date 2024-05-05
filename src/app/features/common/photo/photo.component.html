@@ -1,0 +1,19 @@
+<div class="photo">
+  @if (showFullPhotoPreview()) {
+    <img
+      class="cursor-pointer"
+      [src]="photo()?.thumbnailUrl"
+      [alt]="photo().title"
+    >
+
+    <span class="text-sm">{{ photo().title }}</span>
+  } @else {
+    <img
+      class="photo__img"
+      [src]="photo()?.thumbnailUrl"
+      [alt]="photo().title"
+    >
+
+    <span class="photo__title">{{ photo().title }}</span>
+  }
+</div>

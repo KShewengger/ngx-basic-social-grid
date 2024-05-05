@@ -11,11 +11,7 @@
 
     <div class="grid grid-cols-3 gap-4">
       @for(photo of albumPhotos(); track photo.id) {
-        <img
-          class="cursor-pointer gap-2 hover:scale-105 rounded-md overflow-hidden opacity-60 hover:opacity-100"
-          [src]="photo?.thumbnailUrl"
-          [alt]="photo.title"
-        >
+        <sg-photo [photo]="photo" />
       }
     </div>
   </div>

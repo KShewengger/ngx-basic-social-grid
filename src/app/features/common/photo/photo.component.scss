@@ -1,0 +1,11 @@
+.photo {
+  @apply flex flex-col gap-2 justify-center;
+
+  &__img {
+    @apply cursor-pointer hover:scale-105 rounded-md overflow-hidden opacity-60 hover:opacity-100;
+  }
+
+  &__title {
+    @apply text-sm w-10/12 truncate text-gray-700;
+  }
+}

@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 my-8">
+      <div class="wrapper-list">
         @for(album of paginatedAlbums(); track album.id) {
           <sg-album
             [id]="album.id"
@@ -37,7 +37,8 @@
       [length]="totalFilteredAlbums()"
       [pageIndex]="pageIndex()"
       [pageSize]="pageSize"
-      (page)="pageEvent.set($event);"/>
+      (page)="pageEvent.set($event);"
+    />
   </mat-card>
 </div>
 
