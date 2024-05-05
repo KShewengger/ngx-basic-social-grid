@@ -8,10 +8,11 @@ import {
 } from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { Album } from '@app/models';
-import { PhotosFacade } from '@app/states/photos';
+import { AlbumUser } from '@app/models';
 import { filterDataBySearch } from '@app/utils';
 import { AlbumComponent } from '@features/common/album';
+import { DrawerComponent } from '@features/common/drawer';
+import { PostComponent } from '@features/common/post';
 import { AlbumsFacade } from '@states/albums';
 
 @Component({
@@ -19,15 +20,23 @@ import { AlbumsFacade } from '@states/albums';
   selector: 'sg-containers',
   templateUrl: './albums.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatCard, MatCardContent, MatCardHeader, AlbumComponent, MatPaginator]
+  imports: [
+    MatCard,
+    MatCardContent,
+    MatCardHeader,
+    AlbumComponent,
+    MatPaginator,
+    DrawerComponent,
+    PostComponent
+  ]
 })
 export class AlbumsComponent {
   private albumsFacade = inject(AlbumsFacade);
-  private photosFacade = inject(PhotosFacade);
 
   public search = signal<string>('');
   public pageIndex = signal<number>(0);
   public pageEvent = signal<PageEvent | null>(null);
+  public openedAlbum = signal<AlbumUser | null>(null);
 
   private albums = this.albumsFacade.usersAlbums;
 
@@ -45,9 +54,6 @@ export class AlbumsComponent {
 
   public endPage = computed(() => this.startPage() + (this.pageEvent()?.pageSize ?? this.pageSize));
 
-  public albumPhotos = (albumId: Album['id']) =>
-    computed(() => this.photosFacade.albumPhotos(albumId));
-
   private handlePaginationUpdate = effect(
     () => {
       this.pageIndex.set(this.pageEvent()?.pageIndex ?? 0);
@@ -61,4 +67,6 @@ export class AlbumsComponent {
     this.pageIndex.set(0);
     this.search.set(value);
   }
+
+  protected readonly open = open;
 }
