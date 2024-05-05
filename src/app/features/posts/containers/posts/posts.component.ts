@@ -1,6 +1,4 @@
-import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { toObservable } from '@angular/core/rxjs-interop';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
@@ -17,7 +15,7 @@ import {
   MatTable
 } from '@angular/material/table';
 import { MatTooltip } from '@angular/material/tooltip';
-import { ExtractUserInitialsPipe, SortDataByPropPipe } from '@app/utils';
+import { ExtractUserInitialsPipe, filterDataBySearch, SortDataByPropPipe } from '@app/utils';
 import { PostsFacade } from '@states/posts';
 
 @Component({
@@ -44,7 +42,6 @@ import { PostsFacade } from '@states/posts';
     MatTooltip,
     MatSort,
     MatSortHeader,
-    AsyncPipe,
     ExtractUserInitialsPipe,
     SortDataByPropPipe
   ]
@@ -54,10 +51,15 @@ export class PostsComponent {
 
   private posts = this.postsFacade.postsWithAuthors;
 
+  public search = signal<string>('');
   public pageEvent = signal<PageEvent | null>(null);
   public sortEvent = signal<Sort | null>(null);
 
-  public paginatePosts = computed(() => this.posts().slice(this.startPage(), this.endPage()));
+  public filteredPosts = computed(() => filterDataBySearch(this.posts(), 'title', this.search()));
+
+  public paginatePosts = computed(() =>
+    this.filteredPosts().slice(this.startPage(), this.endPage())
+  );
 
   public totalPosts = computed(() => this.posts().length);
 
@@ -66,8 +68,6 @@ export class PostsComponent {
   );
 
   public endPage = computed(() => this.startPage() + (this.pageEvent()?.pageSize ?? this.pageSize));
-
-  public paginatePosts$ = toObservable(this.paginatePosts);
 
   public readonly displayedColumns = ['title', 'body', 'avatar'];
   public readonly pageSize = 5;

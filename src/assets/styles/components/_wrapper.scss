@@ -11,8 +11,6 @@
 }
 
 .wrapper-form {
-  @apply flex justify-end items-center gap-4;
-
   &__search {
     @apply border border-gray-200 text-xs py-2 px-2.5 w-3/12 rounded-md;
 
