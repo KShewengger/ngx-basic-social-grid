@@ -9,7 +9,7 @@ export class PostsFacade {
 
   public posts = this.store.selectSignal(postsFeature.selectAllPosts);
 
-  public postsWithAuthors = this.store.selectSignal(postsFeature.selectPostsWithUsers);
+  public usersPosts = this.store.selectSignal(postsFeature.selectPostsWithUsers);
 
   public postEntities = this.store.selectSignal(postsFeature.selectPostEntities);
 

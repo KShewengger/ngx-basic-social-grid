@@ -7,9 +7,9 @@ import {
   MatCardTitle
 } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
-import { PostComponent } from '@app/features/common/post/post.component';
 import { Source } from '@app/models';
 import { platformIconMapper } from '@app/utils';
+import { PostComponent } from '@features/common/post';
 import { PostsFacade } from '@states/posts';
 
 @Component({

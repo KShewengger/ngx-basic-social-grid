@@ -15,10 +15,10 @@ import {
   MatTable
 } from '@angular/material/table';
 import { MatTooltip } from '@angular/material/tooltip';
-import { DrawerComponent } from '@app/features/common/drawer/drawer.component';
-import { PostComponent } from '@app/features/common/post/post.component';
 import { PostUser } from '@app/models';
 import { ExtractUserInitialsPipe, filterDataBySearch, SortDataByPropPipe } from '@app/utils';
+import { DrawerComponent } from '@features/common/drawer';
+import { PostComponent } from '@features/common/post';
 import { PostsFacade } from '@states/posts';
 
 @Component({
@@ -53,7 +53,7 @@ import { PostsFacade } from '@states/posts';
 export class PostsComponent {
   private postsFacade = inject(PostsFacade);
 
-  private posts = this.postsFacade.postsWithAuthors;
+  private posts = this.postsFacade.usersPosts;
 
   public search = signal<string>('');
   public pageEvent = signal<PageEvent | null>(null);

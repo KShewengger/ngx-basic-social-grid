@@ -106,5 +106,7 @@
   [open]="!!openedPost()"
   (openChange)="openedPost.set(null)"
 >
-  <sg-post activePreview [post]="openedPost()!" />
+  @if (openedPost()) {
+    <sg-post activePreview [post]="openedPost()!" />
+  }
 </sg-drawer>
