@@ -20,5 +20,5 @@ export class PostsFacade {
   public post = (id: Post['id']) => this.store.selectSignal(postsFeature.selectPost(id));
 
   public userPosts = (userId: Post['userId']) =>
-    this.store.selectSignal(postsFeature.selectUserPosts(userId));
+    this.store.selectSignal(postsFeature.selectUserPosts(userId))();
 }

@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { MatCard, MatCardAvatar, MatCardContent, MatCardHeader } from '@angular/material/card';
+import { PostsFacade } from '@states/posts';
 import { UsersFacade } from '@states/users';
 
 @Component({
@@ -12,6 +13,9 @@ import { UsersFacade } from '@states/users';
 })
 export class ProfileComponent {
   private usersFacade = inject(UsersFacade);
+  private postsFacade = inject(PostsFacade);
 
   public currentUser = this.usersFacade.currentUser;
+
+  public posts = computed(() => this.postsFacade.userPosts(this.currentUser().id));
 }

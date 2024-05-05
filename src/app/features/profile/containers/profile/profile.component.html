@@ -49,5 +49,37 @@
         </div>
       </mat-card-content>
     </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <p class="font-bold">Posts</p>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="profile-card">
+          @for (post of posts(); track post.id) {
+            <div class="post !border-0">
+              <div class="font-medium">
+                <p class="post__title">{{ post.title }}</p>
+              </div>
+
+              <p class="post__body">{{ post.body }}</p>
+            </div>
+          }
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <p class="font-bold">Albums</p>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="profile-card">
+          Albums
+        </div>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
