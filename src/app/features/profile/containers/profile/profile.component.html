@@ -75,20 +75,15 @@
       </mat-card-header>
 
       <mat-card-content>
-        <div class="albums">
+        <div class="profile-albums">
           @for(album of albums(); track album.id) {
             @if (albumPhotos(album.id)(); as albumPhotosItems) {
-              <div class="album group">
-                <img
-                  alt="cover-image"
-                  class="album__cover"
-                  [src]="albumPhotosItems[0].thumbnailUrl"
-                >
-                <span class="album__title">{{ album.title }}</span>
-                <span class="album__total">{{ albumPhotosItems.length }} photos</span>
-              </div>
+              <sg-album
+                [title]="album.title"
+                [coverPhoto]="albumPhotosItems[0]?.thumbnailUrl ?? ''"
+                [totalPhotos]="albumPhotosItems.length"
+              />
             }
-
           }
         </div>
       </mat-card-content>

@@ -35,7 +35,8 @@
       "@features/profile": ["./src/app/features/profile/index.ts"],
       "@features/posts": ["./src/app/features/posts/index.ts"],
       "@features/common/post": ["./src/app/features/common/post/index.ts"],
-      "@features/drawer": ["./src/app/features/common/drawer/index.ts"],
+      "@features/common/album": ["./src/app/features/common/album/index.ts"],
+      "@features/common/drawer": ["./src/app/features/common/drawer/index.ts"],
       "@states/app": ["./src/app/states/app/index.ts"],
       "@states/users": ["./src/app/states/users/index.ts"],
       "@states/posts": ["./src/app/states/posts/index.ts"],
@@ -46,6 +47,11 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "extendedDiagnostics": {
+      "checks": {
+        "optionalChainNotNullable": "suppress"
+      }
+    }
   }
 }

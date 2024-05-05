@@ -10,6 +10,8 @@ export class AlbumsFacade {
 
   public albums = this.store.selectSignal(albumsFeature.selectAllAlbums);
 
+  public usersAlbums = this.store.selectSignal(albumsFeature.selectAlbumsWithUsers);
+
   public albumEntities = this.store.selectSignal(albumsFeature.selectAlbumEntities);
 
   public totalAlbums = this.store.selectSignal(albumsFeature.selectTotalAlbums);

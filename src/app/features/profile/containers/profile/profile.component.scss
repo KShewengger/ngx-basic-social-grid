@@ -49,3 +49,7 @@
     @apply text-gray-900;
   }
 }
+
+.profile-albums {
+  @apply grid grid-cols-3 gap-6;
+}

@@ -1,10 +1,11 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { MatCard, MatCardAvatar, MatCardContent, MatCardHeader } from '@angular/material/card';
-import { DrawerComponent } from '@app/features/common/drawer/drawer.component';
-import { PostComponent } from '@app/features/common/post/post.component';
 import { Album } from '@app/models';
 import { PhotosFacade } from '@app/states/photos';
+import { AlbumComponent } from '@features/common/album';
+import { DrawerComponent } from '@features/common/drawer';
+import { PostComponent } from '@features/common/post';
 import { AlbumsFacade } from '@states/albums';
 import { PostsFacade } from '@states/posts';
 import { UsersFacade } from '@states/users';
@@ -22,7 +23,8 @@ import { UsersFacade } from '@states/users';
     MatCardHeader,
     MatCardAvatar,
     PostComponent,
-    DrawerComponent
+    DrawerComponent,
+    AlbumComponent
   ]
 })
 export class ProfileComponent {

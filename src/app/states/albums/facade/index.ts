@@ -1,1 +1,1 @@
-export * from './users.facade';
+export * from './albums.facade';
