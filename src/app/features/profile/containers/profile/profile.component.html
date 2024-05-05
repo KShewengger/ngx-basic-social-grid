@@ -1,0 +1,53 @@
+<div class="profile">
+  <div class="profile-info">
+    <mat-card>
+      <div class="profile-avatar">
+        <img
+          src="assets/images/custom/avatar.jpg"
+          alt="user-photo"
+          class="profile-avatar__img"
+        >
+
+        <div  class="profile-summary">
+          <span class="profile-summary__name">{{ currentUser().name }}</span>
+          <span class="profile-summary__username">&#64;{{ currentUser().username }}</span>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <p class="font-bold">Personal Information</p>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="profile-card">
+          <div class="profile-item">
+            <p class="profile-item__field">Name</p>
+            <p class="profile-item__value">{{ currentUser().name }}</p>
+          </div>
+
+          <div class="profile-item">
+            <p class="profile-item__field">Email</p>
+            <p class="profile-item__value">{{ currentUser().email }}</p>
+          </div>
+
+          <div class="profile-item">
+            <p class="profile-item__field">Phone</p>
+            <p class="profile-item__value">{{ currentUser().phone }}</p>
+          </div>
+
+          <div class="profile-item">
+            <p class="profile-item__field">Website</p>
+            <p class="profile-item__value">{{ currentUser().website }}</p>
+          </div>
+
+          <div class="profile-item">
+            <p class="profile-item__field">Company</p>
+            <p class="profile-item__value">{{ currentUser().company.name }}</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

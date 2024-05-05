@@ -38,6 +38,7 @@ export function getUsersStateSelectors<T>(state: Selector<T, UsersState>) {
   const selectCurrentUser = createSelector(selectAllUsers, (users) => ({
     ...users[0],
     name: 'Kristy Almuete',
+    username: 'kristyalmuete',
     email: 'kristy@gmail.com'
   }));
 

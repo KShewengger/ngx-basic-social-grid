@@ -1,0 +1,43 @@
+.profile {
+  @apply w-[40rem] max-w-full mx-auto;
+}
+
+.profile-avatar {
+  @apply bg-primary-100/60 ring-1 ring-primary-300 flex flex-col items-center px-4 py-6 rounded gap-4;
+
+  &__img {
+    @apply rounded-full w-28 h-28;
+  }
+}
+
+.profile-summary {
+  @apply flex flex-col gap-0.5 items-center;
+
+  &__name {
+    @apply font-bold text-lg text-gray-800;
+  }
+
+  &__username {
+    @apply bg-gradient-to-r from-yellow-600 to-purple-800 text-transparent bg-clip-text;
+  }
+}
+
+.profile-info {
+  @apply flex flex-col gap-4;
+}
+
+.profile-card {
+  @apply grid grid-cols-2 grid-rows-2 gap-6 xl:grid-cols-3 py-4;
+}
+
+.profile-item {
+  @apply flex flex-col gap-1.5 text-sm;
+
+  &__field {
+    @apply text-xs font-medium text-gray-400 uppercase;
+  }
+
+  &__value {
+    @apply text-gray-900;
+  }
+}
