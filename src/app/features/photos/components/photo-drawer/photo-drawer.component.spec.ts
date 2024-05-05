@@ -8,10 +8,9 @@ describe('PhotoDrawerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PhotoDrawerComponent]
-    })
-      .compileComponents();
-    
+      imports: [PhotoDrawerComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(PhotoDrawerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

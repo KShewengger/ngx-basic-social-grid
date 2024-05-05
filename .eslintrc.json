@@ -10,6 +10,7 @@
       "files": ["*.ts"],
       "extends": [
         "eslint:recommended",
+        "plugin:prettier/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
@@ -38,7 +39,8 @@
             "caseInsensitive": true
           }
         }],
-        "unused-imports/no-unused-imports": "warn"
+        "unused-imports/no-unused-imports": "warn",
+        "max-len": ["error", { "code": 100 }]
       }
     },
     {

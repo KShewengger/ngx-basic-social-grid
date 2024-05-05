@@ -9,11 +9,7 @@ import { usersFeature } from './reducers';
 const usersProviders = [
   provideState(usersFeature),
   provideEffects(effects),
-  UsersFacade
+  UsersFacade,
 ];
 
-export {
-  UsersActions,
-  UsersFacade,
-  usersProviders
-};
+export { UsersActions, UsersFacade, usersProviders };

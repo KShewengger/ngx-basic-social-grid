@@ -7,9 +7,8 @@ import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 
 import { postsAdapter } from '../adapters';
 
-
 const initialState = postsAdapter.getInitialState({
-  loading: true
+  loading: true,
 });
 
 export const reducer = createReducer(
@@ -21,19 +20,20 @@ export const reducer = createReducer(
   on(PostsActions.loadPostsFailure, (state) => ({ ...state, loading: false })),
 
   on(PostsActions.loadPostSuccess, (state, { post }) => {
-    return postsAdapter.updateOne({
-      id: post.id,
-      changes: post
-    }, state);
+    return postsAdapter.updateOne(
+      {
+        id: post.id,
+        changes: post,
+      },
+      state,
+    );
   }),
 );
 
 export const postsFeature = createFeature({
   name: 'posts',
   reducer,
-  extraSelectors: ({
-    selectPostsState,
-  }) => {
+  extraSelectors: ({ selectPostsState }) => {
     const commonSelectors = getPostsStateSelectors(selectPostsState);
 
     const selectPostsWithUsers = createSelector(
@@ -47,21 +47,21 @@ export const postsFeature = createFeature({
             user: user ?? null,
           };
         });
-      }
+      },
     );
 
-    const selectPostWithUser = (id: PostUser['id']) => createSelector(
-      selectPostsWithUsers,
-      (posts) => posts.find(post => post.id === id)
-    );
+    const selectPostWithUser = (id: PostUser['id']) =>
+      createSelector(selectPostsWithUsers, (posts) =>
+        posts.find((post) => post.id === id),
+      );
 
-    const selectTopPosts = createSelector(
-      selectPostsWithUsers,
-      (posts) => pluckUniqueEntities(posts, 5));
+    const selectTopPosts = createSelector(selectPostsWithUsers, (posts) =>
+      pluckUniqueEntities(posts, 5),
+    );
 
     const selectTopPostsTotal = createSelector(
       selectTopPosts,
-      (topPosts) => topPosts.length
+      (topPosts) => topPosts.length,
     );
 
     return {
@@ -69,7 +69,7 @@ export const postsFeature = createFeature({
       selectPostsWithUsers,
       selectPostWithUser,
       selectTopPosts,
-      selectTopPostsTotal
+      selectTopPostsTotal,
     };
-  }
+  },
 });

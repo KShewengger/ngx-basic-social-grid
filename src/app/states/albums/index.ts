@@ -9,11 +9,7 @@ import { albumsFeature } from './reducers';
 const albumsProviders = [
   provideState(albumsFeature),
   provideEffects(effects),
-  AlbumsFacade
+  AlbumsFacade,
 ];
 
-export {
-  AlbumsActions,
-  AlbumsFacade,
-  albumsProviders
-};
+export { AlbumsActions, AlbumsFacade, albumsProviders };

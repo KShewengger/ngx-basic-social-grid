@@ -8,10 +8,9 @@ describe('AlbumDrawerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AlbumDrawerComponent]
-    })
-      .compileComponents();
-    
+      imports: [AlbumDrawerComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AlbumDrawerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

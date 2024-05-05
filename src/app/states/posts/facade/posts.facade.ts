@@ -7,31 +7,23 @@ import { Store } from '@ngrx/store';
 export class PostsFacade {
   private store = inject(Store);
 
-  public posts = this.store.selectSignal(
-    postsFeature.selectAllPosts
-  );
+  public posts = this.store.selectSignal(postsFeature.selectAllPosts);
 
   public postEntities = this.store.selectSignal(
-    postsFeature.selectPostEntities
+    postsFeature.selectPostEntities,
   );
 
-  public totalPosts = this.store.selectSignal(
-    postsFeature.selectTotalPosts
-  );
+  public totalPosts = this.store.selectSignal(postsFeature.selectTotalPosts);
 
-  public topPosts = this.store.selectSignal(
-    postsFeature.selectTopPosts
-  );
+  public topPosts = this.store.selectSignal(postsFeature.selectTopPosts);
 
   public totalTopPosts = this.store.selectSignal(
-    postsFeature.selectTopPostsTotal
+    postsFeature.selectTopPostsTotal,
   );
 
-  public post = (id: Post['id']) => this.store.selectSignal(
-    postsFeature.selectPost(id)
-  );
+  public post = (id: Post['id']) =>
+    this.store.selectSignal(postsFeature.selectPost(id));
 
-  public userPosts = (userId: Post['userId']) => this.store.selectSignal(
-    postsFeature.selectUserPosts(userId)
-  );
+  public userPosts = (userId: Post['userId']) =>
+    this.store.selectSignal(postsFeature.selectUserPosts(userId));
 }

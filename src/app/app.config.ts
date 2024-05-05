@@ -35,12 +35,14 @@ export const appConfig: ApplicationConfig = {
     ...photosProviders,
     {
       provide: APP_INITIALIZER,
-      useFactory: (store = inject(Store)) => () => {
-        store.dispatch(AppActions.initialize());
-      },
+      useFactory:
+        (store = inject(Store)) =>
+          () => {
+            store.dispatch(AppActions.initialize());
+          },
       multi: true,
     },
     { provide: TitleStrategy, useClass: PlatformTitleStrategyService },
-    { provide: JSON_PLACEHOLDER_API, useValue: environment.apiBaseUrl }
-  ]
+    { provide: JSON_PLACEHOLDER_API, useValue: environment.apiBaseUrl },
+  ],
 };

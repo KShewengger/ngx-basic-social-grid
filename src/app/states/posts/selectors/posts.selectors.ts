@@ -3,9 +3,7 @@ import { postsAdapter } from '@app/states/posts/adapters';
 import { PostsState } from '@app/states/posts/models';
 import { createSelector, Selector } from '@ngrx/store';
 
-export function getPostsStateSelectors<T>(
-  state: Selector<T, PostsState>
-) {
+export function getPostsStateSelectors<T>(state: Selector<T, PostsState>) {
   const {
     selectAll: selectAllPosts,
     selectEntities: selectPostEntities,
@@ -15,18 +13,16 @@ export function getPostsStateSelectors<T>(
 
   const selectPostsLoading = createSelector(
     state,
-    (postsState) => postsState.loading
+    (postsState) => postsState.loading,
   );
 
-  const selectPost = (id: Post['id']) => createSelector(
-    selectPostEntities,
-    (posts) => posts[id]
-  );
+  const selectPost = (id: Post['id']) =>
+    createSelector(selectPostEntities, (posts) => posts[id]);
 
-  const selectUserPosts = (userId: Post['userId']) => createSelector(
-    selectAllPosts,
-    (posts) => posts.filter(post => post.userId === userId)
-  );
+  const selectUserPosts = (userId: Post['userId']) =>
+    createSelector(selectAllPosts, (posts) =>
+      posts.filter((post) => post.userId === userId),
+    );
 
   return {
     selectAllPosts,

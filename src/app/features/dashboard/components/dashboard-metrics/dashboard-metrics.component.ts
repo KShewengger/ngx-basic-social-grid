@@ -24,9 +24,9 @@ export class DashboardMetricsComponent {
   public totalTopAlbums = this.albumsFacade.totalTopAlbums;
   public totalTopPhotos = this.photosFacade.totalTopPhotos;
 
-  public metrics = computed(() => ([
+  public metrics = computed(() => [
     metricsMapper(Source.Posts, this.totalTopPosts()),
     metricsMapper(Source.Albums, this.totalTopAlbums()),
     metricsMapper(Source.Photos, this.totalTopPhotos()),
-  ]));
+  ]);
 }

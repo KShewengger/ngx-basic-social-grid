@@ -8,27 +8,18 @@ import { usersFeature } from '../reducers';
 export class UsersFacade {
   private store = inject(Store);
 
-  public users = this.store.selectSignal(
-    usersFeature.selectAllUsers
-  );
+  public users = this.store.selectSignal(usersFeature.selectAllUsers);
 
   public userEntities = this.store.selectSignal(
-    usersFeature.selectUserEntities
+    usersFeature.selectUserEntities,
   );
 
-  public totalUsers = this.store.selectSignal(
-    usersFeature.selectTotalUsers
-  );
+  public totalUsers = this.store.selectSignal(usersFeature.selectTotalUsers);
 
-  public currentUser = this.store.selectSignal(
-    usersFeature.selectCurrentUser
-  );
+  public currentUser = this.store.selectSignal(usersFeature.selectCurrentUser);
 
-  public user = (id: User['id']) => this.store.selectSignal(
-    usersFeature.selectUser(id)
-  );
+  public user = (id: User['id']) =>
+    this.store.selectSignal(usersFeature.selectUser(id));
 
-  public currentUserName = computed(() =>
-    this.currentUser().name
-  );
+  public currentUserName = computed(() => this.currentUser().name);
 }

@@ -3,7 +3,6 @@ import { inject, Injectable } from '@angular/core';
 import { JSON_PLACEHOLDER_API } from '@app/constants';
 import { Api, Photo } from '@app/models';
 
-
 @Injectable({ providedIn: 'root' })
 export class PhotosService {
   private http = inject(HttpClient);

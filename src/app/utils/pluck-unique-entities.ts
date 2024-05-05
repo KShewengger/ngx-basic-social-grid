@@ -1,6 +1,9 @@
 import { UserSummary } from '@app/models';
 
-export function pluckUniqueEntities<T extends { user: UserSummary; }>(entities: T[], pluckCount: number) {
+export function pluckUniqueEntities<T extends { user: UserSummary }>(
+  entities: T[],
+  pluckCount: number,
+) {
   const uniqueEntities = entities.reduce((entityMap, post) => {
     if (post.user && !entityMap.has(post.user.id)) {
       entityMap.set(post.user.id, post);

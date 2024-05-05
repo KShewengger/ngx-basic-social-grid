@@ -7,14 +7,12 @@ export const PhotoSchema = z.object({
   id: z.number(),
   title: z.string(),
   url: z.string().url(),
-  thumbnailUrl: z.string().url()
+  thumbnailUrl: z.string().url(),
 });
 
-export const PhotoAlbumSchema = PhotoSchema
-  .omit({ albumId: true })
-  .extend({
-    album: AlbumUserSchema
-  });
+export const PhotoAlbumSchema = PhotoSchema.omit({ albumId: true }).extend({
+  album: AlbumUserSchema,
+});
 
 export type Photo = z.infer<typeof PhotoSchema>;
 export type PhotoAlbum = z.infer<typeof PhotoAlbumSchema>;

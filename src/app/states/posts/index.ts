@@ -9,11 +9,7 @@ import { postsFeature } from './reducers';
 const postsProviders = [
   provideState(postsFeature),
   provideEffects(effects),
-  PostsFacade
+  PostsFacade,
 ];
 
-export {
-  PostsActions,
-  PostsFacade,
-  postsProviders
-};
+export { PostsActions, PostsFacade, postsProviders };
