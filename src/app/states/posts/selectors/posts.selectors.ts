@@ -8,21 +8,15 @@ export function getPostsStateSelectors<T>(state: Selector<T, PostsState>) {
     selectAll: selectAllPosts,
     selectEntities: selectPostEntities,
     selectTotal: selectTotalPosts,
-    selectIds: selectPostIds,
+    selectIds: selectPostIds
   } = postsAdapter.getSelectors(state);
 
-  const selectPostsLoading = createSelector(
-    state,
-    (postsState) => postsState.loading,
-  );
+  const selectPostsLoading = createSelector(state, (postsState) => postsState.loading);
 
-  const selectPost = (id: Post['id']) =>
-    createSelector(selectPostEntities, (posts) => posts[id]);
+  const selectPost = (id: Post['id']) => createSelector(selectPostEntities, (posts) => posts[id]);
 
   const selectUserPosts = (userId: Post['userId']) =>
-    createSelector(selectAllPosts, (posts) =>
-      posts.filter((post) => post.userId === userId),
-    );
+    createSelector(selectAllPosts, (posts) => posts.filter((post) => post.userId === userId));
 
   return {
     selectAllPosts,
@@ -31,6 +25,6 @@ export function getPostsStateSelectors<T>(state: Selector<T, PostsState>) {
     selectPostIds,
     selectPost,
     selectUserPosts,
-    selectPostsLoading,
+    selectPostsLoading
   };
 }

@@ -8,7 +8,7 @@ describe('PostDrawerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PostDrawerComponent],
+      imports: [PostDrawerComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PostDrawerComponent);

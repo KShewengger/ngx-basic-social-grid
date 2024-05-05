@@ -1,4 +1,4 @@
-import { Photo, PhotoAlbum } from '@app/models';
+import { Album, Photo, PhotoAlbum } from '@app/models';
 import { albumsFeature } from '@app/states/albums/reducers';
 import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 
@@ -7,7 +7,7 @@ import { photosAdapter } from '../adapters';
 import { getPhotosStateSelectors } from '../selectors';
 
 const initialState = photosAdapter.getInitialState({
-  loading: true,
+  loading: true
 });
 
 export const reducer = createReducer(
@@ -18,18 +18,18 @@ export const reducer = createReducer(
   }),
   on(PhotosActions.loadPhotosFailure, (state) => ({
     ...state,
-    loading: false,
+    loading: false
   })),
 
   on(PhotosActions.loadPhotoSuccess, (state, { photo: { id, ...changes } }) => {
     return photosAdapter.updateOne(
       {
         id,
-        changes,
+        changes
       },
-      state,
+      state
     );
-  }),
+  })
 );
 
 export const photosFeature = createFeature({
@@ -45,20 +45,26 @@ export const photosFeature = createFeature({
         (photos, albumEntities) => {
           return photos.map<PhotoAlbum>((photo) => ({
             ...photo,
-            album: albumEntities[albumId],
+            album: albumEntities[albumId]
           }));
-        },
+        }
+      );
+
+    const selectUserAlbumPhotos = (albumId: Album['id'], userId: Album['userId']) =>
+      createSelector(selectAlbumPhotosWithAuthors(albumId), (photos) =>
+        photos.filter((photo) => photo.album.user?.id === userId)
       );
 
     const selectPhotoAlbumWithAuthor = (id: Photo['id']) =>
       createSelector(selectAlbumPhotosWithAuthors(id), (photos) =>
-        photos.find((photo) => photo.id === id),
+        photos.find((photo) => photo.id === id)
       );
 
     return {
       ...commonSelectors,
       selectAlbumPhotosWithAuthors,
       selectPhotoAlbumWithAuthor,
+      selectUserAlbumPhotos
     };
-  },
+  }
 });

@@ -9,6 +9,6 @@ export const PhotosActions = createActionGroup({
     loadPhotosFailure: emptyProps(),
 
     loadPhoto: (id: Photo['id']) => ({ id }),
-    loadPhotoSuccess: (photo: Photo) => ({ photo }),
-  },
+    loadPhotoSuccess: (photo: Photo) => ({ photo })
+  }
 });

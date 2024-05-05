@@ -1,1 +1,1 @@
-export * from './container/profile.component';
+export * from '@app/features/profile/containers/profile/profile.component';

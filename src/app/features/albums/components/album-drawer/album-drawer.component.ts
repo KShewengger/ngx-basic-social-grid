@@ -5,6 +5,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'sg-album-drawer',
   templateUrl: 'album-drawer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
+  imports: []
 })
 export class AlbumDrawerComponent {}

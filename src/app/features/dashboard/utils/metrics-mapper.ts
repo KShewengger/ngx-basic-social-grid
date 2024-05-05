@@ -5,6 +5,6 @@ export function metricsMapper(source: Source, total: number) {
   return {
     label: source,
     icon: metricImagePathMapper[source],
-    total,
+    total
   };
 }

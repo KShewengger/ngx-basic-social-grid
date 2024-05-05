@@ -12,12 +12,12 @@ export const loadPhotosEffect = createEffect(
       switchMap(() =>
         photosService.fetchPhotos().pipe(
           map((Photos) => PhotosActions.loadPhotosSuccess(Photos)),
-          catchError(() => [PhotosActions.loadPhotosFailure()]),
-        ),
-      ),
+          catchError(() => [PhotosActions.loadPhotosFailure()])
+        )
+      )
     );
   },
-  { functional: true },
+  { functional: true }
 );
 
 export const loadPhotoEffect = createEffect(
@@ -25,11 +25,9 @@ export const loadPhotoEffect = createEffect(
     return actions.pipe(
       ofType(PhotosActions.loadPhoto),
       switchMap(({ id }) =>
-        photosService
-          .fetchPhoto(id)
-          .pipe(map((Photo) => PhotosActions.loadPhotoSuccess(Photo))),
-      ),
+        photosService.fetchPhoto(id).pipe(map((Photo) => PhotosActions.loadPhotoSuccess(Photo)))
+      )
     );
   },
-  { functional: true },
+  { functional: true }
 );

@@ -3,7 +3,7 @@
 }
 
 .sidebar-header {
-  @apply flex items-center gap-2 px-3;
+  @apply flex items-center gap-2 px-3 cursor-pointer;
 
   &__logo {
     @apply text-[2rem] bg-gradient-to-l from-purple-500 to-yellow-500 text-transparent bg-clip-text;
@@ -43,7 +43,11 @@
 }
 
 .sidebar-user {
-  @apply cursor-pointer flex items-center gap-2.5 mx-auto rounded-full border-primary-600 hover:border-2 xl:border-primary-50 xl:hover:border xl:mx-3 xl:border xl:shadow-sm xl:rounded-md xl:py-2 xl:px-2.5 xl:hover:bg-primary-50 xl:hover:ring-1 xl:hover:ring-primary-300;
+  @apply cursor-pointer flex items-center gap-2.5 mx-auto rounded-full border-primary-600 hover:border-2 xl:border-primary-50 xl:hover:border xl:mx-3 xl:border xl:shadow-sm xl:rounded-md xl:py-2 xl:px-2.5 xl:hover:bg-primary-100 xl:hover:ring-1 xl:hover:ring-primary-300;
+
+  &--active {
+    @apply border-2 xl:border xl:bg-primary-50 xl:ring-1 xl:ring-primary-300;
+  }
 
   &__avatar {
     @apply w-9 h-9 rounded-full object-cover;
@@ -54,10 +58,10 @@
   @apply hidden xl:block;
 
   &__name {
-    @apply text-xs text-dark-700 font-bold;
+    @apply text-xs text-dark-800 font-bold;
   }
 
   &__view {
-    @apply text-[11px] text-dark-300 truncate max-w-28;
+    @apply text-[11px] text-dark-600 truncate max-w-28;
   }
 }

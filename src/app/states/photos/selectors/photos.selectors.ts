@@ -9,29 +9,21 @@ export function getPhotosStateSelectors<T>(state: Selector<T, PhotosState>) {
     selectAll: selectAllPhotos,
     selectEntities: selectPhotoEntities,
     selectTotal: selectTotalPhotos,
-    selectIds: selectPhotoIds,
+    selectIds: selectPhotoIds
   } = photosAdapter.getSelectors(state);
 
-  const selectTopPhotos = createSelector(selectAllPhotos, (photos) =>
-    photos.toSpliced(12),
-  );
+  const selectTopPhotos = createSelector(selectAllPhotos, (photos) => photos.toSpliced(12));
 
-  const selectTopPhotosTotal = createSelector(
-    selectTopPhotos,
-    (topPhotos) => topPhotos.length,
-  );
+  const selectTopPhotosTotal = createSelector(selectTopPhotos, (topPhotos) => topPhotos.length);
 
-  const selectPhotosLoading = createSelector(
-    state,
-    (PhotosState) => PhotosState.loading,
-  );
+  const selectPhotosLoading = createSelector(state, (PhotosState) => PhotosState.loading);
 
   const selectPhoto = (id: Photo['id']) =>
     createSelector(selectPhotoEntities, (photos) => photos[id]);
 
   const selectAlbumPhotos = (albumId: Photo['albumId']) =>
     createSelector(selectAllPhotos, (photos) =>
-      photos.filter((photo) => photo.albumId === albumId),
+      photos.filter((photo) => photo.albumId === albumId)
     );
 
   return {
@@ -43,6 +35,6 @@ export function getPhotosStateSelectors<T>(state: Selector<T, PhotosState>) {
     selectAlbumPhotos,
     selectPhotosLoading,
     selectTopPhotos,
-    selectTopPhotosTotal,
+    selectTopPhotosTotal
   };
 }

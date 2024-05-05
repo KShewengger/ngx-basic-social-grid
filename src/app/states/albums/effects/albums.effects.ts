@@ -13,12 +13,12 @@ export const loadAlbumsEffect = createEffect(
       switchMap(() =>
         albumsService.fetchAlbums().pipe(
           map((users) => AlbumsActions.loadAlbumsSuccess(users)),
-          catchError(() => [AlbumsActions.loadAlbumsFailure()]),
-        ),
-      ),
+          catchError(() => [AlbumsActions.loadAlbumsFailure()])
+        )
+      )
     );
   },
-  { functional: true },
+  { functional: true }
 );
 
 export const loadAlbumEffect = createEffect(
@@ -26,11 +26,9 @@ export const loadAlbumEffect = createEffect(
     return actions.pipe(
       ofType(AlbumsActions.loadAlbum),
       switchMap(({ id }) =>
-        albumsService
-          .fetchAlbum(id)
-          .pipe(map((album) => AlbumsActions.loadAlbumSuccess(album))),
-      ),
+        albumsService.fetchAlbum(id).pipe(map((album) => AlbumsActions.loadAlbumSuccess(album)))
+      )
     );
   },
-  { functional: true },
+  { functional: true }
 );

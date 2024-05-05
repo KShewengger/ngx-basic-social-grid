@@ -6,10 +6,6 @@ import * as effects from './effects';
 import { PostsFacade } from './facade';
 import { postsFeature } from './reducers';
 
-const postsProviders = [
-  provideState(postsFeature),
-  provideEffects(effects),
-  PostsFacade,
-];
+const postsProviders = [provideState(postsFeature), provideEffects(effects), PostsFacade];
 
 export { PostsActions, PostsFacade, postsProviders };

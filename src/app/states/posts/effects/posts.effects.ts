@@ -11,12 +11,12 @@ export const loadPostsEffect = createEffect(
       switchMap(() =>
         postsService.fetchPosts().pipe(
           map((posts) => PostsActions.loadPostsSuccess(posts)),
-          catchError(() => [PostsActions.loadPostsFailure()]),
-        ),
-      ),
+          catchError(() => [PostsActions.loadPostsFailure()])
+        )
+      )
     );
   },
-  { functional: true },
+  { functional: true }
 );
 
 export const loadPostEffect = createEffect(
@@ -24,11 +24,9 @@ export const loadPostEffect = createEffect(
     return actions.pipe(
       ofType(PostsActions.loadPost),
       switchMap(({ id }) =>
-        postsService
-          .fetchPost(id)
-          .pipe(map((post) => PostsActions.loadPostSuccess(post))),
-      ),
+        postsService.fetchPost(id).pipe(map((post) => PostsActions.loadPostSuccess(post)))
+      )
     );
   },
-  { functional: true },
+  { functional: true }
 );

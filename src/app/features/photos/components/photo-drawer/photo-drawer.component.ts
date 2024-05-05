@@ -5,6 +5,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'sg-photo-drawer',
   templateUrl: './photo-drawer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [],
+  imports: []
 })
 export class PhotoDrawerComponent {}

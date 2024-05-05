@@ -8,7 +8,7 @@ describe('DashboardPostsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DashboardPostsComponent],
+      imports: [DashboardPostsComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(DashboardPostsComponent);

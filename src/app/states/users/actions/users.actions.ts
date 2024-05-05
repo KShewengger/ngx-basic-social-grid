@@ -9,6 +9,6 @@ export const UsersActions = createActionGroup({
     loadUsersFailure: emptyProps(),
 
     loadUser: (id: User['id']) => ({ id }),
-    loadUserSuccess: (user: User) => ({ user }),
-  },
+    loadUserSuccess: (user: User) => ({ user })
+  }
 });

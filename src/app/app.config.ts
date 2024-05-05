@@ -26,7 +26,7 @@ export const appConfig: ApplicationConfig = {
     provideStoreDevtools({
       name: 'Basic Social Grid',
       trace: false,
-      traceLimit: 25,
+      traceLimit: 25
     }),
     ...appProviders,
     ...postsProviders,
@@ -37,12 +37,12 @@ export const appConfig: ApplicationConfig = {
       provide: APP_INITIALIZER,
       useFactory:
         (store = inject(Store)) =>
-          () => {
-            store.dispatch(AppActions.initialize());
-          },
-      multi: true,
+        () => {
+          store.dispatch(AppActions.initialize());
+        },
+      multi: true
     },
     { provide: TitleStrategy, useClass: PlatformTitleStrategyService },
-    { provide: JSON_PLACEHOLDER_API, useValue: environment.apiBaseUrl },
-  ],
+    { provide: JSON_PLACEHOLDER_API, useValue: environment.apiBaseUrl }
+  ]
 };

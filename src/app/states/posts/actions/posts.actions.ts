@@ -9,6 +9,6 @@ export const PostsActions = createActionGroup({
     loadPostsFailure: emptyProps(),
 
     loadPost: (id: Post['id']) => ({ id }),
-    loadPostSuccess: (post: Post) => ({ post }),
-  },
+    loadPostSuccess: (post: Post) => ({ post })
+  }
 });

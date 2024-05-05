@@ -8,7 +8,7 @@ describe('AlbumDrawerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AlbumDrawerComponent],
+      imports: [AlbumDrawerComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AlbumDrawerComponent);

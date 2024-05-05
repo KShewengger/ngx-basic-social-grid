@@ -9,6 +9,6 @@ export const AlbumsActions = createActionGroup({
     loadAlbumsFailure: emptyProps(),
 
     loadAlbum: (id: Album['id']) => ({ id }),
-    loadAlbumSuccess: (album: Album) => ({ album }),
-  },
+    loadAlbumSuccess: (album: Album) => ({ album })
+  }
 });
