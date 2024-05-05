@@ -3,7 +3,7 @@
     <mat-card-header>
       <p class="flex items-center gap-1">
         <span class="text-xl font-bold">Posts</span>
-        <span class="text-xs text-secondary-500">({{totalPosts()}})</span>
+        <span class="text-xs text-secondary-500">({{totalFilteredPosts()}})</span>
       </p>
     </mat-card-header>
 
@@ -92,7 +92,7 @@
           <mat-paginator
             showFirstLastButtons
             hidePageSize
-            [length]="totalPosts()"
+            [length]="totalFilteredPosts()"
             [pageSize]="pageSize"
             (page)="pageEvent.set($event)"/>
         </div>

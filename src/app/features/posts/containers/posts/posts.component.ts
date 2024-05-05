@@ -61,7 +61,7 @@ export class PostsComponent {
     this.filteredPosts().slice(this.startPage(), this.endPage())
   );
 
-  public totalPosts = computed(() => this.posts().length);
+  public totalFilteredPosts = computed(() => this.filteredPosts().length);
 
   public startPage = computed(
     () => (this.pageEvent()?.pageIndex ?? 0) * (this.pageEvent()?.pageSize ?? 0)
