@@ -4,9 +4,8 @@ import { UsersActions } from '../actions';
 import { usersAdapter } from '../adapters';
 import { getUsersStateSelectors } from '../selectors';
 
-
 const initialState = usersAdapter.getInitialState({
-  loading: true
+  loading: true,
 });
 
 export const reducer = createReducer(
@@ -25,7 +24,6 @@ export const reducer = createReducer(
 export const usersFeature = createFeature({
   name: 'users',
   reducer,
-  extraSelectors: ({
-    selectUsersState,
-  }) => getUsersStateSelectors(selectUsersState)
+  extraSelectors: ({ selectUsersState }) =>
+    getUsersStateSelectors(selectUsersState),
 });

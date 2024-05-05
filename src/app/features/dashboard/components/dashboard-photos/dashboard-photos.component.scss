@@ -1,0 +1,15 @@
+.top-photos {
+  @apply flex flex-col gap-7 py-2 px-4;
+}
+
+.photos {
+  @apply grid grid-cols-3 gap-4 sm:grid-cols-4;
+}
+
+.photos-header {
+  @apply flex items-center gap-1;
+}
+
+.photo {
+  @apply relative cursor-pointer gap-2 hover:scale-105 rounded-md overflow-hidden opacity-60 hover:opacity-100;
+}

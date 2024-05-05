@@ -1,0 +1,23 @@
+<mat-card class="py-2">
+  <mat-card-content>
+    <div class="metrics">
+      @for(metric of metrics(); track $index) {
+        <div
+          class="metric"
+          [ngClass]="{ 'metric--bordered': $index === 1, 'pr-3': $last }"
+        >
+          <img
+            alt="metric-logo"
+            class="metric__img"
+            [src]="metric.icon"
+          >
+
+          <div class="metric-info">
+            <span class="metric-info__title">{{ metric.label }}</span>
+            <span class="metric-info__total">{{ metric.total }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -9,11 +9,7 @@ import { photosFeature } from './reducers';
 const photosProviders = [
   provideState(photosFeature),
   provideEffects(effects),
-  PhotosFacade
+  PhotosFacade,
 ];
 
-export {
-  PhotosActions,
-  PhotosFacade,
-  photosProviders
-};
+export { PhotosActions, PhotosFacade, photosProviders };

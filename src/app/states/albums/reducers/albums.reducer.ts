@@ -6,9 +6,8 @@ import { AlbumsActions } from '../actions';
 import { albumsAdapter } from '../adapters';
 import { getAlbumsStateSelectors } from '../selectors';
 
-
 const initialState = albumsAdapter.getInitialState({
-  loading: true
+  loading: true,
 });
 
 export const reducer = createReducer(
@@ -17,7 +16,10 @@ export const reducer = createReducer(
   on(AlbumsActions.loadAlbumsSuccess, (state, { albums }) => {
     return albumsAdapter.setAll(albums, { ...state, loading: false });
   }),
-  on(AlbumsActions.loadAlbumsFailure, (state) => ({ ...state, loading: false })),
+  on(AlbumsActions.loadAlbumsFailure, (state) => ({
+    ...state,
+    loading: false,
+  })),
 
   on(AlbumsActions.loadAlbumSuccess, (state, { album }) => {
     return albumsAdapter.setOne(album, state);
@@ -27,9 +29,7 @@ export const reducer = createReducer(
 export const albumsFeature = createFeature({
   name: 'albums',
   reducer,
-  extraSelectors: ({
-    selectAlbumsState,
-  }) => {
+  extraSelectors: ({ selectAlbumsState }) => {
     const commonSelectors = getAlbumsStateSelectors(selectAlbumsState);
 
     const selectAlbumsWithUsers = createSelector(
@@ -40,32 +40,31 @@ export const albumsFeature = createFeature({
           const user = userEntities[album.userId];
           return {
             ...album,
-            user: user ? {
-              id: user.id,
-              name: user.name,
-              email: user.email,
-            } : null,
+            user: user ?? null,
           };
         });
-      }
+      },
     );
 
     const selectAlbumsWithUsersEntities = createSelector(
       selectAlbumsWithUsers,
-      (albums) => albums.reduce((acc, album) =>
-        ({ ...acc, [album.id]: album }),
-        {} as Record<number, AlbumUser>)
+      (albums) =>
+        albums.reduce(
+          (acc, album) => ({ ...acc, [album.id]: album }),
+          {} as Record<number, AlbumUser>,
+        ),
     );
 
-    const selectAlbumWithUser = (id: AlbumUser['id']) => createSelector(
-      selectAlbumsWithUsersEntities,
-      (albumsEntities) => albumsEntities[id]
-    );
+    const selectAlbumWithUser = (id: AlbumUser['id']) =>
+      createSelector(
+        selectAlbumsWithUsersEntities,
+        (albumsEntities) => albumsEntities[id],
+      );
 
-    const selectUserAlbums = (userId: Album['userId']) => createSelector(
-      selectAlbumsWithUsers,
-      (albums) => albums.filter(album => album.user?.id === userId)
-    );
+    const selectUserAlbums = (userId: Album['userId']) =>
+      createSelector(selectAlbumsWithUsers, (albums) =>
+        albums.filter((album) => album.user?.id === userId),
+      );
 
     return {
       ...commonSelectors,
@@ -74,5 +73,5 @@ export const albumsFeature = createFeature({
       selectAlbumWithUser,
       selectUserAlbums,
     };
-  }
+  },
 });

@@ -15,17 +15,18 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
+    "target": "esnext",
+    "module": "ESNext",
     "useDefineForClassFields": false,
     "lib": [
-      "ES2022",
+      "ESNext",
       "dom"
     ],
     "paths": {
       "@app/*": ["./src/app/*"],
       "@environments/*": ["./src/environments/*"],
       "@app/models": ["./src/app/models/index.ts"],
+      "@app/utils": ["./src/app/utils/index.ts"],
       "@app/services": ["./src/app/services/index.ts"],
       "@app/constants": ["./src/app/constants/index.ts"],
       "@features/albums": ["./src/app/features/albums/index.ts"],
@@ -36,7 +37,7 @@
       "@states/app": ["./src/app/states/app/index.ts"],
       "@states/users": ["./src/app/states/users/index.ts"],
       "@states/posts": ["./src/app/states/posts/index.ts"],
-      "@states/albums": ["./src/app/states/albums/index.ts"]
+      "@states/albums": ["./src/app/states/albums/index.ts"],
     }
   },
   "angularCompilerOptions": {

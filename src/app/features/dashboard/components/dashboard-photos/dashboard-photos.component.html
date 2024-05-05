@@ -1,0 +1,20 @@
+<mat-card class="top-photos">
+  <mat-card-header>
+    <mat-card-title>
+      <div class="panel-header">
+        <span class="panel-header__title">Recent Photos</span>
+        <small class="panel-header__total">({{ totalPhotos() }})</small>
+      </div>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="photos">
+      @for(photo of photos(); track photo.id) {
+        <div class="photo">
+          <img [src]="photo.thumbnailUrl" [alt]="photo.title" />
+        </div>
+      }
+    </div>
+  </mat-card-content>
+</mat-card>

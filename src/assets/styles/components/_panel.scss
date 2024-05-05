@@ -1,0 +1,11 @@
+.panel-header {
+  @apply flex items-center gap-1;
+
+  &__title {
+    @apply font-bold;
+  }
+
+  &__total {
+    @apply text-secondary-500;
+  }
+}

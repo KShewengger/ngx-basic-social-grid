@@ -4,9 +4,7 @@ import { createSelector, Selector } from '@ngrx/store';
 import { photosAdapter } from '../adapters';
 import { PhotosState } from '../models';
 
-export function getPhotosStateSelectors<T>(
-  state: Selector<T, PhotosState>
-) {
+export function getPhotosStateSelectors<T>(state: Selector<T, PhotosState>) {
   const {
     selectAll: selectAllPhotos,
     selectEntities: selectPhotoEntities,
@@ -14,20 +12,27 @@ export function getPhotosStateSelectors<T>(
     selectIds: selectPhotoIds,
   } = photosAdapter.getSelectors(state);
 
+  const selectTopPhotos = createSelector(selectAllPhotos, (photos) =>
+    photos.toSpliced(12),
+  );
+
+  const selectTopPhotosTotal = createSelector(
+    selectTopPhotos,
+    (topPhotos) => topPhotos.length,
+  );
+
   const selectPhotosLoading = createSelector(
     state,
-    (PhotosState) => PhotosState.loading
+    (PhotosState) => PhotosState.loading,
   );
 
-  const selectPhoto = (id: Photo['id']) => createSelector(
-    selectPhotoEntities,
-    (photos) => photos[id]
-  );
+  const selectPhoto = (id: Photo['id']) =>
+    createSelector(selectPhotoEntities, (photos) => photos[id]);
 
-  const selectAlbumPhotos = (albumId: Photo['albumId']) => createSelector(
-    selectAllPhotos,
-    (photos) => photos.filter(photo => photo.albumId === albumId)
-  );
+  const selectAlbumPhotos = (albumId: Photo['albumId']) =>
+    createSelector(selectAllPhotos, (photos) =>
+      photos.filter((photo) => photo.albumId === albumId),
+    );
 
   return {
     selectAllPhotos,
@@ -36,6 +41,8 @@ export function getPhotosStateSelectors<T>(
     selectPhotoIds,
     selectPhoto,
     selectAlbumPhotos,
-    selectPhotosLoading
+    selectPhotosLoading,
+    selectTopPhotos,
+    selectTopPhotosTotal,
   };
 }

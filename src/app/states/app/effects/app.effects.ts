@@ -7,17 +7,17 @@ import { AlbumsActions } from '@states/albums';
 import { PostsActions } from '@states/posts';
 import { concatMap } from 'rxjs';
 
-
-export const initEffect = createEffect((
-  actions = inject(Actions),
-) => {
-  return actions.pipe(
-    ofType(AppActions.initialize),
-    concatMap(() => [
-      PostsActions.loadPosts(),
-      UsersActions.loadUsers(),
-      AlbumsActions.loadAlbums(),
-      PhotosActions.loadPhotos()
-    ]),
-  );
-}, { functional: true });
+export const initEffect = createEffect(
+  (actions = inject(Actions)) => {
+    return actions.pipe(
+      ofType(AppActions.initialize),
+      concatMap(() => [
+        PostsActions.loadPosts(),
+        UsersActions.loadUsers(),
+        AlbumsActions.loadAlbums(),
+        PhotosActions.loadPhotos(),
+      ]),
+    );
+  },
+  { functional: true },
+);

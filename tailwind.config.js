@@ -2,6 +2,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+      spacing: {
+        '0': '0',
+      },
       colors: {
         'primary': {
           50: '#ecebf7',
@@ -20,20 +23,20 @@ module.exports = {
           'A700': '#6c5fff',
         },
         'secondary': {
-          50: '#f9f9f9',
-          100: '#f0f0f0',
-          200: '#e6e6e6',
-          300: '#dbdbdb',
-          400: '#d4d4d4',
-          500: '#cccccc',
-          600: '#c7c7c7',
-          700: '#c0c0c0',
-          800: '#b9b9b9',
-          900: '#adadad',
-          'A100': '#ffffff',
-          'A200': '#ffffff',
-          'A400': '#fffcfc',
-          'A700': '#ffe2e2',
+          50: '#E7ECF0',
+          100: '#D4DDE3',
+          200: '#C1CED6',
+          300: '#AEC0CA',
+          400: '#9BB2BE',
+          500: '#A4AFBD',
+          600: '#8C9AA8',
+          700: '#748593',
+          800: '#5C707E',
+          900: '#445B69',
+          'A100': '#E7ECF0',
+          'A200': '#CFD8E2',
+          'A400': '#B7C3CD',
+          'A700': '#748593',
         },
         'accent': {
           50: '#fae7e7',
@@ -50,11 +53,28 @@ module.exports = {
           'A200': '#ffbebe',
           'A400': '#ff8b8b',
           'A700': '#ff7171',
-        }
+        },
+        'dark': {
+          50: '#e1e1e1',
+          100: '#cacaca',
+          200: '#b3b3b3',
+          300: '#9c9c9c',
+          400: '#858585',
+          500: '#6e6e6e',
+          600: '#575757',
+          700: '#404040',
+          800: '#292929',
+          900: '#121212',
+          950: '#0a0a0a',
+          'A100': '#ffffff',
+          'A200': '#ffffff',
+          'A400': '#fffcfc',
+          'A700': '#ffe2e2',
+        },
+
       },
       fontFamily: {
-        'roboto': ['Roboto', 'sans-serif'],
-        'montserrat': ['Montserrat', 'sans-serif']
+        'lato': ['Lato', 'sans-serif'],
       },
       transitionProperty: {
         dimensions: 'height, width',
