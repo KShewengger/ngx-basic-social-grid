@@ -27,6 +27,11 @@ export class AlbumComponent {
 
   public title = computed(() => this.album()?.title ?? '');
 
+  public albumOwner = computed(() => {
+    if (!this.album()) return null;
+    return this.albumsFacade.albumOwner(this.album()!.id);
+  });
+
   public coverPhoto = computed(() => this.albumPhotos()[0]?.thumbnailUrl ?? '');
 
   public totalPhotos = computed(() => this.albumPhotos().length);

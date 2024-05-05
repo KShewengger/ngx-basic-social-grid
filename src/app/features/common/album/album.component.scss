@@ -17,9 +17,25 @@
 
   &__title {
     @apply text-gray-700 text-sm capitalize;
+
+    &--preview {
+      @apply text-lg font-bold;
+    }
   }
 
   &__total {
     @apply text-xs text-secondary-700;
+  }
+
+  &__info {
+    @apply flex flex-col items-center justify-center gap-0.5;
+  }
+}
+
+.album-preview {
+  @apply flex flex-col gap-6;
+
+  &__wrapper {
+    @apply flex flex-col items-center gap-0.5;
   }
 }
