@@ -6,6 +6,18 @@
   @apply p-4 flex flex-col gap-6;
 }
 
+.wrapper-header {
+  @apply flex items-center gap-1;
+
+  &__title {
+    @apply text-xl font-bold;
+  }
+
+  &__total {
+    @apply text-xs text-secondary-500;
+  }
+}
+
 .wrapper-content {
   @apply flex flex-col gap-4;
 }

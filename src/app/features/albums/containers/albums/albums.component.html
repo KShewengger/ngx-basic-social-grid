@@ -1,9 +1,9 @@
 <div class="wrapper">
   <mat-card class="wrapper-card">
     <mat-card-header>
-      <p class="flex items-center gap-1">
-        <span class="text-xl font-bold">Posts</span>
-        <span class="text-xs text-secondary-500">({{totalFilteredAlbums()}})</span>
+      <p class="wrapper-header">
+        <span class="wrapper-header__title">Albums</span>
+        <span class="wrapper-header__total">({{totalFilteredAlbums()}})</span>
       </p>
     </mat-card-header>
 
@@ -15,13 +15,13 @@
             placeholder="Search"
             class="wrapper-form__search"
             #searchInput
-            (input)="search.set(searchInput.value)"
+            (input)="handleSearch(searchInput.value)"
           />
         </div>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 my-8">
-        @for(album of filteredAlbums(); track album.id) {
+        @for(album of paginatedAlbums(); track album.id) {
           @if (albumPhotos(album.id)(); as albumPhotosItems) {
             <sg-album
               [title]="album.title"
@@ -31,6 +31,15 @@
           }
         }
       </div>
-    </mat-card-content>.
+    </mat-card-content>
+
+    <mat-paginator
+      showFirstLastButtons
+      hidePageSize
+      class="!flex !justify-center"
+      [length]="totalFilteredAlbums()"
+      [pageIndex]="pageIndex()"
+      [pageSize]="pageSize"
+      (page)="pageEvent.set($event);"/>
   </mat-card>
 </div>

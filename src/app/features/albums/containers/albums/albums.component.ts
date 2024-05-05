@@ -1,5 +1,13 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  signal
+} from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Album } from '@app/models';
 import { PhotosFacade } from '@app/states/photos';
 import { filterDataBySearch } from '@app/utils';
@@ -11,20 +19,46 @@ import { AlbumsFacade } from '@states/albums';
   selector: 'sg-containers',
   templateUrl: './albums.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatCard, MatCardContent, MatCardHeader, AlbumComponent]
+  imports: [MatCard, MatCardContent, MatCardHeader, AlbumComponent, MatPaginator]
 })
 export class AlbumsComponent {
   private albumsFacade = inject(AlbumsFacade);
   private photosFacade = inject(PhotosFacade);
 
   public search = signal<string>('');
+  public pageIndex = signal<number>(0);
+  public pageEvent = signal<PageEvent | null>(null);
 
   private albums = this.albumsFacade.usersAlbums;
 
   public filteredAlbums = computed(() => filterDataBySearch(this.albums(), 'title', this.search()));
 
+  public paginatedAlbums = computed(() =>
+    this.filteredAlbums().slice(this.startPage(), this.endPage())
+  );
+
   public totalFilteredAlbums = computed(() => this.filteredAlbums().length);
+
+  public startPage = computed(
+    () => (this.pageEvent()?.pageIndex ?? 0) * (this.pageEvent()?.pageSize ?? 0)
+  );
+
+  public endPage = computed(() => this.startPage() + (this.pageEvent()?.pageSize ?? this.pageSize));
 
   public albumPhotos = (albumId: Album['id']) =>
     computed(() => this.photosFacade.albumPhotos(albumId));
+
+  private handlePaginationUpdate = effect(
+    () => {
+      this.pageIndex.set(this.pageEvent()?.pageIndex ?? 0);
+    },
+    { allowSignalWrites: true }
+  );
+
+  public readonly pageSize = 5;
+
+  public handleSearch(value: string) {
+    this.pageIndex.set(0);
+    this.search.set(value);
+  }
 }
