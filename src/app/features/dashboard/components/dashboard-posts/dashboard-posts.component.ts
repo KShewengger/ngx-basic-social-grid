@@ -7,6 +7,7 @@ import {
   MatCardTitle
 } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
+import { PostComponent } from '@app/features/common/post/post.component';
 import { Source } from '@app/models';
 import { platformIconMapper } from '@app/utils';
 import { PostsFacade } from '@states/posts';
@@ -16,7 +17,15 @@ import { PostsFacade } from '@states/posts';
   selector: 'sg-dashboard-posts',
   templateUrl: 'dashboard-posts.component.html',
   styleUrl: 'dashboard-posts.component.scss',
-  imports: [MatCard, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle, MatIcon]
+  imports: [
+    MatCard,
+    MatCardContent,
+    MatCardHeader,
+    MatCardTitle,
+    MatCardSubtitle,
+    MatIcon,
+    PostComponent
+  ]
 })
 export class DashboardPostsComponent {
   private postsFacade = inject(PostsFacade);

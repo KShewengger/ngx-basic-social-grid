@@ -10,14 +10,7 @@
 
   <mat-card-content>
     @for (post of posts(); track post.id) {
-      <div class="post">
-        <div class="font-medium">
-          <p class="post__username">&#64;{{post.user?.username}}</p>
-          <p class="post__title">{{ post.title }}</p>
-        </div>
-
-        <p class="post__body">{{ post.body }}</p>
-      </div>
+      <sg-post [post]="post" />
     }
   </mat-card-content>
 </mat-card>

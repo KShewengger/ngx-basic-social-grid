@@ -42,10 +42,12 @@
             <p class="profile-item__value">{{ currentUser().website }}</p>
           </div>
 
-          <div class="profile-item">
-            <p class="profile-item__field">Company</p>
-            <p class="profile-item__value">{{ currentUser().company.name }}</p>
-          </div>
+          @if (currentUser().company) {
+            <div class="profile-item">
+              <p class="profile-item__field">Company</p>
+              <p class="profile-item__value">{{ currentUser().company.name }}</p>
+            </div>
+          }
         </div>
       </mat-card-content>
     </mat-card>
@@ -56,18 +58,12 @@
       </mat-card-header>
 
       <mat-card-content>
-        <div class="profile-card__content">
+        <div class="profile-card__content !grid-cols-2 !gap-2">
           @for (post of posts(); track post.id) {
-            <div
-              class="post !border-0"
-              [ngClass]="{'bg-primary-50/50': $first}"
-            >
-              <div class="font-medium">
-                <p class="post__title">{{ post.title }}</p>
-              </div>
-
-              <p class="post__body">{{ post.body }}</p>
-            </div>
+            <sg-post
+              hideUsername
+              [post]="post"
+            />
           }
         </div>
       </mat-card-content>
@@ -81,15 +77,18 @@
       <mat-card-content>
         <div class="albums">
           @for(album of albums(); track album.id) {
-            <div class="album group">
-              <img
-                alt="cover-image"
-                class="album__cover"
-                [src]="albumPhotos(album.id)()[0].thumbnailUrl"
-              >
-              <span class="album__title">{{ album.title }}</span>
-              <span class="album__total">{{ albumPhotos(album.id)().length }} photos</span>
-            </div>
+            @if (albumPhotos(album.id)(); as albumPhotosItems) {
+              <div class="album group">
+                <img
+                  alt="cover-image"
+                  class="album__cover"
+                  [src]="albumPhotosItems[0].thumbnailUrl"
+                >
+                <span class="album__title">{{ album.title }}</span>
+                <span class="album__total">{{ albumPhotosItems.length }} photos</span>
+              </div>
+            }
+
           }
         </div>
       </mat-card-content>
