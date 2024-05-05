@@ -8,76 +8,93 @@
     </mat-card-header>
 
     <mat-card-content>
-      <div class="wrapper-table">
-        <table mat-table [dataSource]="paginatePosts()">
-          <ng-container matColumnDef="title">
-            <th
-              mat-header-cell
-              class="wrapper-table__header"
-              *matHeaderCellDef
-            >
-              Title
-            </th>
+      <div class="wrapper-content">
+        <div class="wrapper-form">
+          <input
+            type="text"
+            placeholder="Search"
+            class="wrapper-form__search"
+          />
+        </div>
 
-            <td
-              mat-cell
-              class="wrapper-table__value"
-              *matCellDef="let element"
-            >
-              {{element.title}}
-            </td>
-          </ng-container>
+        <div class="wrapper-table">
+          <table
+            mat-table
+            matSort
+            [dataSource]="paginatePosts() | sgSortDataByProp: sortEvent()"
+            (matSortChange)="sortEvent.set($event)"
+          >
+            <ng-container matColumnDef="title">
+              <th
+                mat-header-cell
+                mat-sort-header
+                class="wrapper-table__header"
+                *matHeaderCellDef
+              >
+                Title
+              </th>
 
-          <ng-container matColumnDef="body">
-            <th
-              mat-header-cell
-              class="wrapper-table__header"
-              *matHeaderCellDef>
-              Body
-            </th>
+              <td
+                mat-cell
+                class="wrapper-table__value"
+                *matCellDef="let element"
+              >
+                {{element.title}}
+              </td>
+            </ng-container>
 
-            <td
-              mat-cell
-              class="wrapper-table__value"
-              *matCellDef="let element">
-              {{element.body}}
-            </td>
-          </ng-container>
+            <ng-container matColumnDef="body">
+              <th
+                mat-header-cell
+                mat-sort-header
+                class="wrapper-table__header"
+                *matHeaderCellDef>
+                Body
+              </th>
 
-          <ng-container matColumnDef="avatar">
-            <th
-              mat-header-cell
-              class="wrapper-table__header"
-              *matHeaderCellDef>
-              &nbsp;
-            </th>
+              <td
+                mat-cell
+                class="wrapper-table__value"
+                *matCellDef="let element">
+                {{element.body}}
+              </td>
+            </ng-container>
 
-            <td
-              mat-cell
-              *matCellDef="let element">
-              <span
-                class="wrapper-table__avatar"
-                matTooltipClass="!block xl:!hidden !capitalize"
-                [matTooltip]="element.user?.name"
-              >{{ element.user?.name | sgExtractUserInitials }}</span>
-            </td>
-          </ng-container>
+            <ng-container matColumnDef="avatar">
+              <th
+                mat-header-cell
+                class="wrapper-table__header"
+                *matHeaderCellDef>
+                &nbsp;
+              </th>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr
-            mat-row
-            class="wrapper-table__row"
-            *matRowDef="let row; columns: displayedColumns;"
-          ></tr>
-        </table>
+              <td
+                mat-cell
+                *matCellDef="let element">
+                <span
+                  class="wrapper-table__avatar"
+                  matTooltipClass="!block xl:!hidden !capitalize"
+                  [matTooltip]="element.user?.name"
+                >{{ element.user?.name | sgExtractUserInitials }}</span>
+              </td>
+            </ng-container>
 
-        <mat-paginator
-          showFirstLastButtons
-          hidePageSize
-          [length]="totalPosts()"
-          [pageSize]="pageSize"
-          (page)="pageEvent.set($event)"/>
-      </div>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr
+              mat-row
+              class="wrapper-table__row"
+              *matRowDef="let row; columns: displayedColumns;"
+            ></tr>
+          </table>
+
+          <mat-paginator
+            showFirstLastButtons
+            hidePageSize
+            [length]="totalPosts()"
+            [pageSize]="pageSize"
+            (page)="pageEvent.set($event)"/>
+        </div>
+     </div>
     </mat-card-content>
   </mat-card>
 </div>

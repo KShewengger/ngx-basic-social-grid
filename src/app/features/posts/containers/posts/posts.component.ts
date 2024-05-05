@@ -1,6 +1,9 @@
+import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
 import {
   MatCell,
   MatCellDef,
@@ -14,7 +17,7 @@ import {
   MatTable
 } from '@angular/material/table';
 import { MatTooltip } from '@angular/material/tooltip';
-import { ExtractUserInitialsPipe } from '@app/utils';
+import { ExtractUserInitialsPipe, SortDataByPropPipe } from '@app/utils';
 import { PostsFacade } from '@states/posts';
 
 @Component({
@@ -39,7 +42,11 @@ import { PostsFacade } from '@states/posts';
     MatRowDef,
     MatPaginator,
     MatTooltip,
-    ExtractUserInitialsPipe
+    MatSort,
+    MatSortHeader,
+    AsyncPipe,
+    ExtractUserInitialsPipe,
+    SortDataByPropPipe
   ]
 })
 export class PostsComponent {
@@ -48,6 +55,7 @@ export class PostsComponent {
   private posts = this.postsFacade.postsWithAuthors;
 
   public pageEvent = signal<PageEvent | null>(null);
+  public sortEvent = signal<Sort | null>(null);
 
   public paginatePosts = computed(() => this.posts().slice(this.startPage(), this.endPage()));
 
@@ -58,6 +66,8 @@ export class PostsComponent {
   );
 
   public endPage = computed(() => this.startPage() + (this.pageEvent()?.pageSize ?? this.pageSize));
+
+  public paginatePosts$ = toObservable(this.paginatePosts);
 
   public readonly displayedColumns = ['title', 'body', 'avatar'];
   public readonly pageSize = 5;
