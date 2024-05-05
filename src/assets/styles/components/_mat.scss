@@ -14,3 +14,17 @@
 .mdc-tooltip__surface {
   background-color: black !important;
 }
+
+.mat-mdc-paginator-range-label {
+  @apply text-gray-500 font-bold;
+}
+
+.mat-mdc-paginator-icon {
+  width: 1.25rem !important;
+}
+
+.mat-sort-header-container {
+  border-bottom: 0 !important;
+}
+
+
