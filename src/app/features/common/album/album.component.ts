@@ -1,4 +1,5 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { SlicePipe } from '@angular/common';
+import { booleanAttribute, Component, computed, inject, input } from '@angular/core';
 import { Album } from '@app/models';
 import { PhotosFacade } from '@app/states/photos';
 import { AlbumsFacade } from '@states/albums';
@@ -7,13 +8,15 @@ import { AlbumsFacade } from '@states/albums';
   selector: 'sg-album',
   standalone: true,
   templateUrl: 'album.component.html',
-  styleUrl: 'album.component.scss'
+  styleUrl: 'album.component.scss',
+  imports: [SlicePipe]
 })
 export class AlbumComponent {
   private albumsFacade = inject(AlbumsFacade);
   private photosFacade = inject(PhotosFacade);
 
   public id = input.required<Album['id']>();
+  public showFullAlbumPreview = input(false, { transform: booleanAttribute });
 
   public album = computed(() => this.albumsFacade.album(this.id())());
 

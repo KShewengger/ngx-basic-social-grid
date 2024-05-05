@@ -46,6 +46,9 @@
   (openChange)="openedAlbum.set(null)"
 >
   @if (openedAlbum()) {
-    Hi
+    <sg-album
+      showFullAlbumPreview
+      [id]="openedAlbum()!.id"
+    />
   }
 </sg-drawer>

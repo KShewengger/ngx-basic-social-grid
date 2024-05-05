@@ -1,9 +1,28 @@
-<div class="album group">
-  <img
-    alt="cover-image"
-    class="album__cover"
-    [src]="coverPhoto()"
-  >
-  <span class="album__title">{{ title() }}</span>
-  <span class="album__total">{{ totalPhotos() }} photos</span>
-</div>
+@if (showFullAlbumPreview()) {
+  <div class="flex flex-col gap-6">
+    <div class="flex flex-col items-center gap-1.5">
+      <span class="album__title font-bold">{{ title() }}</span>
+      <span class="album__total">{{ totalPhotos() }} photos</span>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+      @for(photo of albumPhotos(); track photo.id) {
+        <img
+          class="cursor-pointer gap-2 hover:scale-105 rounded-md overflow-hidden opacity-60 hover:opacity-100"
+          [src]="photo?.thumbnailUrl"
+          [alt]="photo.title"
+        >
+      }
+    </div>
+  </div>
+} @else {
+  <div class="album">
+    <img
+      alt="cover-image"
+      class="album__cover"
+      [src]="coverPhoto()"
+    >
+    <span class="album__title w-36 truncate">{{ title() }}</span>
+    <span class="album__total">{{ totalPhotos() }} photos</span>
+  </div>
+}
