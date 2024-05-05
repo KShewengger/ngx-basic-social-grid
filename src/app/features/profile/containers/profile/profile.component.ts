@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { MatCard, MatCardAvatar, MatCardContent, MatCardHeader } from '@angular/material/card';
+import { DrawerComponent } from '@app/features/common/drawer/drawer.component';
 import { PostComponent } from '@app/features/common/post/post.component';
 import { Album } from '@app/models';
 import { PhotosFacade } from '@app/states/photos';
@@ -14,7 +15,15 @@ import { UsersFacade } from '@states/users';
   templateUrl: 'profile.component.html',
   styleUrl: 'profile.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgClass, MatCard, MatCardContent, MatCardHeader, MatCardAvatar, PostComponent]
+  imports: [
+    NgClass,
+    MatCard,
+    MatCardContent,
+    MatCardHeader,
+    MatCardAvatar,
+    PostComponent,
+    DrawerComponent
+  ]
 })
 export class ProfileComponent {
   private usersFacade = inject(UsersFacade);

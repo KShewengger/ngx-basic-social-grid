@@ -15,11 +15,11 @@ import {
   MatTable
 } from '@angular/material/table';
 import { MatTooltip } from '@angular/material/tooltip';
+import { DrawerComponent } from '@app/features/common/drawer/drawer.component';
+import { PostComponent } from '@app/features/common/post/post.component';
 import { PostUser } from '@app/models';
 import { ExtractUserInitialsPipe, filterDataBySearch, SortDataByPropPipe } from '@app/utils';
 import { PostsFacade } from '@states/posts';
-
-import { PostDrawerComponent } from '../../components';
 
 @Component({
   standalone: true,
@@ -44,9 +44,10 @@ import { PostDrawerComponent } from '../../components';
     MatTooltip,
     MatSort,
     MatSortHeader,
-    PostDrawerComponent,
+    DrawerComponent,
     ExtractUserInitialsPipe,
-    SortDataByPropPipe
+    SortDataByPropPipe,
+    PostComponent
   ]
 })
 export class PostsComponent {

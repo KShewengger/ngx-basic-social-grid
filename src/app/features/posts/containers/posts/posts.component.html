@@ -102,7 +102,9 @@
   </mat-card>
 </div>
 
-<sg-post-drawer
-  [post]="openedPost()"
-  (close)="openedPost.set(null)"
-/>
+<sg-drawer
+  [open]="!!openedPost()"
+  (openChange)="openedPost.set(null)"
+>
+  <sg-post activePreview [post]="openedPost()!" />
+</sg-drawer>
