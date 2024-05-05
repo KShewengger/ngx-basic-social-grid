@@ -15,8 +15,11 @@ import {
   MatTable
 } from '@angular/material/table';
 import { MatTooltip } from '@angular/material/tooltip';
+import { PostUser } from '@app/models';
 import { ExtractUserInitialsPipe, filterDataBySearch, SortDataByPropPipe } from '@app/utils';
 import { PostsFacade } from '@states/posts';
+
+import { PostDrawerComponent } from '../../components';
 
 @Component({
   standalone: true,
@@ -42,6 +45,7 @@ import { PostsFacade } from '@states/posts';
     MatTooltip,
     MatSort,
     MatSortHeader,
+    PostDrawerComponent,
     ExtractUserInitialsPipe,
     SortDataByPropPipe
   ]
@@ -54,6 +58,7 @@ export class PostsComponent {
   public search = signal<string>('');
   public pageEvent = signal<PageEvent | null>(null);
   public sortEvent = signal<Sort | null>(null);
+  public openedPost = signal<PostUser | null>(null);
 
   public filteredPosts = computed(() => filterDataBySearch(this.posts(), 'title', this.search()));
 
