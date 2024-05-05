@@ -22,13 +22,10 @@
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 my-8">
         @for(album of paginatedAlbums(); track album.id) {
-          @if (albumPhotos(album.id)(); as albumPhotosItems) {
-            <sg-album
-              [title]="album.title"
-              [coverPhoto]="albumPhotosItems[0]?.thumbnailUrl ?? ''"
-              [totalPhotos]="albumPhotosItems.length"
-            />
-          }
+          <sg-album
+            [id]="album.id"
+            (click)="openedAlbum.set(album)"
+          />
         }
       </div>
     </mat-card-content>
@@ -43,3 +40,15 @@
       (page)="pageEvent.set($event);"/>
   </mat-card>
 </div>
+
+<sg-drawer
+  [open]="!!openedAlbum()"
+  (openChange)="openedAlbum.set(null)"
+>
+  @if (openedAlbum()) {
+    <sg-album
+      showFullAlbumPreview
+      [id]="openedAlbum()!.id"
+    />
+  }
+</sg-drawer>

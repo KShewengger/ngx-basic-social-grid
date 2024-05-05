@@ -1,13 +1,33 @@
-import { Component, input } from '@angular/core';
+import { SlicePipe } from '@angular/common';
+import { booleanAttribute, Component, computed, inject, input } from '@angular/core';
+import { Album } from '@app/models';
+import { PhotosFacade } from '@app/states/photos';
+import { AlbumsFacade } from '@states/albums';
 
 @Component({
   selector: 'sg-album',
   standalone: true,
   templateUrl: 'album.component.html',
-  styleUrl: 'album.component.scss'
+  styleUrl: 'album.component.scss',
+  imports: [SlicePipe]
 })
 export class AlbumComponent {
-  public title = input.required<string>();
-  public coverPhoto = input.required<string>();
-  public totalPhotos = input.required<number>();
+  private albumsFacade = inject(AlbumsFacade);
+  private photosFacade = inject(PhotosFacade);
+
+  public id = input.required<Album['id']>();
+  public showFullAlbumPreview = input(false, { transform: booleanAttribute });
+
+  public album = computed(() => this.albumsFacade.album(this.id())());
+
+  public albumPhotos = computed(() => {
+    if (!this.album()) return [];
+    return this.photosFacade.albumPhotos(this.album()!.id);
+  });
+
+  public title = computed(() => this.album()?.title ?? '');
+
+  public coverPhoto = computed(() => this.albumPhotos()[0]?.thumbnailUrl ?? '');
+
+  public totalPhotos = computed(() => this.albumPhotos().length);
 }

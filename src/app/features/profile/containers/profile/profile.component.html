@@ -77,13 +77,7 @@
       <mat-card-content>
         <div class="profile-albums">
           @for(album of albums(); track album.id) {
-            @if (albumPhotos(album.id)(); as albumPhotosItems) {
-              <sg-album
-                [title]="album.title"
-                [coverPhoto]="albumPhotosItems[0]?.thumbnailUrl ?? ''"
-                [totalPhotos]="albumPhotosItems.length"
-              />
-            }
+            <sg-album [id]="album.id" />
           }
         </div>
       </mat-card-content>
