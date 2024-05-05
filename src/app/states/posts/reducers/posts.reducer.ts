@@ -1,4 +1,4 @@
-import { PostUser } from '@app/models';
+import { Post, PostUser } from '@app/models';
 import { PostsActions } from '@app/states/posts/actions';
 import { getPostsStateSelectors } from '@app/states/posts/selectors';
 import { usersFeature } from '@app/states/users/reducers';
@@ -50,6 +50,11 @@ export const postsFeature = createFeature({
       }
     );
 
+    const selectUserPosts = (userId: Post['userId']) =>
+      createSelector(selectPostsWithUsers, (posts) =>
+        posts.filter((post) => post.user?.id === userId)
+      );
+
     const selectPostWithUser = (id: PostUser['id']) =>
       createSelector(selectPostsWithUsers, (posts) => posts.find((post) => post.id === id));
 
@@ -64,7 +69,8 @@ export const postsFeature = createFeature({
       selectPostsWithUsers,
       selectPostWithUser,
       selectTopPosts,
-      selectTopPostsTotal
+      selectTopPostsTotal,
+      selectUserPosts
     };
   }
 });

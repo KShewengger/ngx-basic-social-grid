@@ -25,7 +25,6 @@ import { PostDrawerComponent } from '../../components';
   standalone: true,
   selector: 'sg-containers',
   templateUrl: 'posts.component.html',
-  styleUrl: 'posts.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     MatCardHeader,

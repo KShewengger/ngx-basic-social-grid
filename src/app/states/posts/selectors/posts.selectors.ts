@@ -15,16 +15,12 @@ export function getPostsStateSelectors<T>(state: Selector<T, PostsState>) {
 
   const selectPost = (id: Post['id']) => createSelector(selectPostEntities, (posts) => posts[id]);
 
-  const selectUserPosts = (userId: Post['userId']) =>
-    createSelector(selectAllPosts, (posts) => posts.filter((post) => post.userId === userId));
-
   return {
     selectAllPosts,
     selectPostEntities,
     selectTotalPosts,
     selectPostIds,
     selectPost,
-    selectUserPosts,
     selectPostsLoading
   };
 }
