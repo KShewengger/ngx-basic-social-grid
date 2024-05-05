@@ -67,6 +67,4 @@ export class AlbumsComponent {
     this.pageIndex.set(0);
     this.search.set(value);
   }
-
-  protected readonly open = open;
 }
