@@ -15,7 +15,7 @@ export class DrawerComponent {
   public open = model<boolean>(false);
 
   private checkOpenState = effect(() => {
-    const classValue = this.open() ? 'overflow-hidden' : 'overflow-auto';
+    const classValue = this.open() ? 'disable-scroll' : 'overflow-auto';
     this.renderer.addClass(document.body, classValue);
   });
 }
