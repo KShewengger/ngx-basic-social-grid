@@ -15,7 +15,7 @@
             placeholder="Search"
             class="wrapper-form__search"
             #searchInput
-            (input)="search.set(searchInput.value)"
+            (input)="handleSearch(searchInput.value)"
           />
         </div>
 
@@ -94,6 +94,7 @@
             showFirstLastButtons
             hidePageSize
             [length]="totalFilteredPosts()"
+            [pageIndex]="pageIndex()"
             [pageSize]="pageSize"
             (page)="pageEvent.set($event)"/>
         </div>

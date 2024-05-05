@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  signal
+} from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
@@ -56,6 +63,7 @@ export class PostsComponent {
   private posts = this.postsFacade.usersPosts;
 
   public search = signal<string>('');
+  public pageIndex = signal<number>(0);
   public pageEvent = signal<PageEvent | null>(null);
   public sortEvent = signal<Sort | null>(null);
   public openedPost = signal<PostUser | null>(null);
@@ -74,6 +82,18 @@ export class PostsComponent {
 
   public endPage = computed(() => this.startPage() + (this.pageEvent()?.pageSize ?? this.pageSize));
 
+  private handlePaginationUpdate = effect(
+    () => {
+      this.pageIndex.set(this.pageEvent()?.pageIndex ?? 0);
+    },
+    { allowSignalWrites: true }
+  );
+
   public readonly displayedColumns = ['title', 'body', 'avatar'];
   public readonly pageSize = 5;
+
+  public handleSearch(value: string) {
+    this.pageIndex.set(0);
+    this.search.set(value);
+  }
 }
