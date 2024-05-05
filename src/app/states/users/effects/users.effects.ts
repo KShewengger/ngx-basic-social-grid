@@ -12,12 +12,12 @@ export const loadUsersEffect = createEffect(
       switchMap(() =>
         usersService.fetchUsers().pipe(
           map((users) => UsersActions.loadUsersSuccess(users)),
-          catchError(() => [UsersActions.loadUsersFailure()]),
-        ),
-      ),
+          catchError(() => [UsersActions.loadUsersFailure()])
+        )
+      )
     );
   },
-  { functional: true },
+  { functional: true }
 );
 
 export const loadUserEffect = createEffect(
@@ -25,11 +25,9 @@ export const loadUserEffect = createEffect(
     return actions.pipe(
       ofType(UsersActions.loadUser),
       switchMap(({ id }) =>
-        usersService
-          .fetchUser(id)
-          .pipe(map((user) => UsersActions.loadUserSuccess(user))),
-      ),
+        usersService.fetchUser(id).pipe(map((user) => UsersActions.loadUserSuccess(user)))
+      )
     );
   },
-  { functional: true },
+  { functional: true }
 );

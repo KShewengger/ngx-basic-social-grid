@@ -13,7 +13,7 @@ import { PostsFacade } from '@states/posts';
   selector: 'sg-dashboard-metrics',
   templateUrl: 'dashboard-metrics.component.html',
   styleUrl: 'dashboard-metrics.component.scss',
-  imports: [NgClass, MatCard, MatCardContent, MatIcon],
+  imports: [NgClass, MatCard, MatCardContent, MatIcon]
 })
 export class DashboardMetricsComponent {
   private postsFacade = inject(PostsFacade);
@@ -27,6 +27,6 @@ export class DashboardMetricsComponent {
   public metrics = computed(() => [
     metricsMapper(Source.Posts, this.totalTopPosts()),
     metricsMapper(Source.Albums, this.totalTopAlbums()),
-    metricsMapper(Source.Photos, this.totalTopPhotos()),
+    metricsMapper(Source.Photos, this.totalTopPhotos())
   ]);
 }

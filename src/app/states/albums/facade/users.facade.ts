@@ -10,18 +10,13 @@ export class AlbumsFacade {
 
   public albums = this.store.selectSignal(albumsFeature.selectAllAlbums);
 
-  public albumEntities = this.store.selectSignal(
-    albumsFeature.selectAlbumEntities,
-  );
+  public albumEntities = this.store.selectSignal(albumsFeature.selectAlbumEntities);
 
   public totalAlbums = this.store.selectSignal(albumsFeature.selectTotalAlbums);
 
   public topAlbums = this.store.selectSignal(albumsFeature.selectTopAlbums);
 
-  public totalTopAlbums = this.store.selectSignal(
-    albumsFeature.selectTopAlbumsTotal,
-  );
+  public totalTopAlbums = this.store.selectSignal(albumsFeature.selectTopAlbumsTotal);
 
-  public album = (id: Album['id']) =>
-    this.store.selectSignal(albumsFeature.selectAlbum(id));
+  public album = (id: Album['id']) => this.store.selectSignal(albumsFeature.selectAlbum(id));
 }

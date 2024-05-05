@@ -7,7 +7,7 @@ import { albumsAdapter } from '../adapters';
 import { getAlbumsStateSelectors } from '../selectors';
 
 const initialState = albumsAdapter.getInitialState({
-  loading: true,
+  loading: true
 });
 
 export const reducer = createReducer(
@@ -18,12 +18,12 @@ export const reducer = createReducer(
   }),
   on(AlbumsActions.loadAlbumsFailure, (state) => ({
     ...state,
-    loading: false,
+    loading: false
   })),
 
   on(AlbumsActions.loadAlbumSuccess, (state, { album }) => {
     return albumsAdapter.setOne(album, state);
-  }),
+  })
 );
 
 export const albumsFeature = createFeature({
@@ -40,30 +40,25 @@ export const albumsFeature = createFeature({
           const user = userEntities[album.userId];
           return {
             ...album,
-            user: user ?? null,
+            user: user ?? null
           };
         });
-      },
+      }
     );
 
-    const selectAlbumsWithUsersEntities = createSelector(
-      selectAlbumsWithUsers,
-      (albums) =>
-        albums.reduce(
-          (acc, album) => ({ ...acc, [album.id]: album }),
-          {} as Record<number, AlbumUser>,
-        ),
+    const selectAlbumsWithUsersEntities = createSelector(selectAlbumsWithUsers, (albums) =>
+      albums.reduce(
+        (acc, album) => ({ ...acc, [album.id]: album }),
+        {} as Record<number, AlbumUser>
+      )
     );
 
     const selectAlbumWithUser = (id: AlbumUser['id']) =>
-      createSelector(
-        selectAlbumsWithUsersEntities,
-        (albumsEntities) => albumsEntities[id],
-      );
+      createSelector(selectAlbumsWithUsersEntities, (albumsEntities) => albumsEntities[id]);
 
     const selectUserAlbums = (userId: Album['userId']) =>
       createSelector(selectAlbumsWithUsers, (albums) =>
-        albums.filter((album) => album.user?.id === userId),
+        albums.filter((album) => album.user?.id === userId)
       );
 
     return {
@@ -71,7 +66,7 @@ export const albumsFeature = createFeature({
       selectAlbumsWithUsers,
       selectAlbumsWithUsersEntities,
       selectAlbumWithUser,
-      selectUserAlbums,
+      selectUserAlbums
     };
-  },
+  }
 });

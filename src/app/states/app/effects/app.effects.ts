@@ -15,9 +15,9 @@ export const initEffect = createEffect(
         PostsActions.loadPosts(),
         UsersActions.loadUsers(),
         AlbumsActions.loadAlbums(),
-        PhotosActions.loadPhotos(),
-      ]),
+        PhotosActions.loadPhotos()
+      ])
     );
   },
-  { functional: true },
+  { functional: true }
 );

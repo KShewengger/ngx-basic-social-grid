@@ -9,17 +9,12 @@ export function getAlbumsStateSelectors<T>(state: Selector<T, AlbumsState>) {
     selectAll: selectAllAlbums,
     selectEntities: selectAlbumEntities,
     selectTotal: selectTotalAlbums,
-    selectIds: selectAlbumIds,
+    selectIds: selectAlbumIds
   } = albumsAdapter.getSelectors(state);
 
-  const selectTopAlbums = createSelector(selectAllAlbums, (albums) =>
-    albums.toSpliced(7),
-  );
+  const selectTopAlbums = createSelector(selectAllAlbums, (albums) => albums.toSpliced(7));
 
-  const selectTopAlbumsTotal = createSelector(
-    selectTopAlbums,
-    (topAlbums) => topAlbums.length,
-  );
+  const selectTopAlbumsTotal = createSelector(selectTopAlbums, (topAlbums) => topAlbums.length);
 
   const selectAlbumsLoading = createSelector(state, (state) => state.loading);
 
@@ -34,6 +29,6 @@ export function getAlbumsStateSelectors<T>(state: Selector<T, AlbumsState>) {
     selectAlbum,
     selectAlbumsLoading,
     selectTopAlbums,
-    selectTopAlbumsTotal,
+    selectTopAlbumsTotal
   };
 }

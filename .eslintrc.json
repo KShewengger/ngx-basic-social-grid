@@ -3,17 +3,19 @@
   "ignorePatterns": ["projects/**/*"],
   "plugins": [
     "import",
-    "unused-imports"
+    "unused-imports",
+    "prettier"  // Add Prettier to your list of plugins
   ],
   "overrides": [
     {
       "files": ["*.ts"],
       "extends": [
         "eslint:recommended",
-        "plugin:prettier/recommended",
+        "plugin:prettier/recommended",  // Integrates Prettier and turns off conflicting rules
         "plugin:@typescript-eslint/recommended",
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "prettier"  // Use just "prettier" as per the latest updates
       ],
       "rules": {
         "@typescript-eslint/no-explicit-any": "warn",
@@ -26,10 +28,14 @@
           "error",
           { "type": "attribute", "prefix": "app", "style": "camelCase" }
         ],
-        "indent": ["error", 2],
-        "quotes": ["error", "single"],
-        "semi": ["error", "always"],
-        "object-curly-spacing": ["error", "always"],
+        "prettier/prettier": ["error", {  // Enforce Prettier formatting rules
+          "singleQuote": true,
+          "semi": true,
+          "useTabs": false,
+          "tabWidth": 2,
+          "trailingComma": "none",
+          "printWidth": 100
+        }],
         "sort-imports": "off",
         "import/order": ["error", {
           "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
@@ -47,7 +53,8 @@
       "files": ["*.html"],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
-        "plugin:@angular-eslint/template/accessibility"
+        "plugin:@angular-eslint/template/accessibility",
+        "prettier"  // Ensure Prettier compatibility with Angular templates
       ],
       "rules": {}
     }

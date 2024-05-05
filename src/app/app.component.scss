@@ -45,6 +45,10 @@
 .sidebar-user {
   @apply cursor-pointer flex items-center gap-2.5 mx-auto rounded-full border-primary-600 hover:border-2 xl:border-primary-50 xl:hover:border xl:mx-3 xl:border xl:shadow-sm xl:rounded-md xl:py-2 xl:px-2.5 xl:hover:bg-primary-50 xl:hover:ring-1 xl:hover:ring-primary-300;
 
+  &--active {
+    @apply border-2 xl:border-0 xl:bg-primary-50 xl:ring-1 xl:ring-primary-300;
+  }
+
   &__avatar {
     @apply w-9 h-9 rounded-full object-cover;
   }

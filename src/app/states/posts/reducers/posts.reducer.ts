@@ -8,7 +8,7 @@ import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 import { postsAdapter } from '../adapters';
 
 const initialState = postsAdapter.getInitialState({
-  loading: true,
+  loading: true
 });
 
 export const reducer = createReducer(
@@ -23,11 +23,11 @@ export const reducer = createReducer(
     return postsAdapter.updateOne(
       {
         id: post.id,
-        changes: post,
+        changes: post
       },
-      state,
+      state
     );
-  }),
+  })
 );
 
 export const postsFeature = createFeature({
@@ -44,32 +44,27 @@ export const postsFeature = createFeature({
           const user = userEntities[post.userId];
           return {
             ...post,
-            user: user ?? null,
+            user: user ?? null
           };
         });
-      },
+      }
     );
 
     const selectPostWithUser = (id: PostUser['id']) =>
-      createSelector(selectPostsWithUsers, (posts) =>
-        posts.find((post) => post.id === id),
-      );
+      createSelector(selectPostsWithUsers, (posts) => posts.find((post) => post.id === id));
 
     const selectTopPosts = createSelector(selectPostsWithUsers, (posts) =>
-      pluckUniqueEntities(posts, 5),
+      pluckUniqueEntities(posts, 5)
     );
 
-    const selectTopPostsTotal = createSelector(
-      selectTopPosts,
-      (topPosts) => topPosts.length,
-    );
+    const selectTopPostsTotal = createSelector(selectTopPosts, (topPosts) => topPosts.length);
 
     return {
       ...commonSelectors,
       selectPostsWithUsers,
       selectPostWithUser,
       selectTopPosts,
-      selectTopPostsTotal,
+      selectTopPostsTotal
     };
-  },
+  }
 });

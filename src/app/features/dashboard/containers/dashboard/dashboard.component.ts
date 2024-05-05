@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   DashboardMetricsComponent,
   DashboardPhotosComponent,
-  DashboardPostsComponent,
+  DashboardPostsComponent
 } from '../../components';
 
 @Component({
@@ -12,10 +12,6 @@ import {
   templateUrl: 'dashboard.component.html',
   styleUrl: 'dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    DashboardMetricsComponent,
-    DashboardPostsComponent,
-    DashboardPhotosComponent,
-  ],
+  imports: [DashboardMetricsComponent, DashboardPostsComponent, DashboardPhotosComponent]
 })
 export class DashboardComponent {}
