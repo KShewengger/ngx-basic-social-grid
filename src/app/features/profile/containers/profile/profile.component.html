@@ -79,16 +79,16 @@
       </mat-card-header>
 
       <mat-card-content>
-        <div class="grid grid-cols-3 gap-6">
+        <div class="albums">
           @for(album of albums(); track album.id) {
-            <div class="album flex flex-col items-center gap-1 cursor-pointer group hover:scale-105">
+            <div class="album group">
               <img
                 alt="cover-image"
-                class="rounded-md opacity-70 group-hover:opacity-100"
+                class="album__cover"
                 [src]="albumPhotos(album.id)()[0].thumbnailUrl"
               >
-              <span class="text-gray-700 text-sm capitalize w-36 truncate group-hover:text-primary-500 group-hover:font-bold">{{ album.title }}</span>
-              <span class="text-xs text-secondary-700">{{ albumPhotos(album.id)().length }} photos</span>
+              <span class="album__title">{{ album.title }}</span>
+              <span class="album__total">{{ albumPhotos(album.id)().length }} photos</span>
             </div>
           }
         </div>

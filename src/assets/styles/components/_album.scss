@@ -1,0 +1,29 @@
+.albums {
+  @apply grid grid-cols-3 gap-6;
+}
+
+.album {
+  @apply flex flex-col items-center gap-1 cursor-pointer hover:scale-105;
+
+  &:hover {
+    &__title {
+      @apply text-primary-500 font-bold;
+    }
+
+    &__cover {
+      @apply opacity-100;
+    }
+  }
+
+  &__cover {
+    @apply rounded-md opacity-70 group-hover:opacity-100;
+  }
+
+  &__title {
+    @apply text-gray-700 text-sm capitalize w-36 truncate;
+  }
+
+  &__total {
+    @apply text-xs text-secondary-700;
+  }
+}
