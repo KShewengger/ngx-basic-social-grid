@@ -1,1 +1,23 @@
-<p>post works!</p>
+<div
+  class="drawer"
+  [class.drawer--opened]="!!post()"
+>
+  <mat-icon
+    class="drawer__close"
+    fontIcon="close"
+    (click)="close.emit()"
+  ></mat-icon>
+
+  @if (post()) {
+    <div
+      class="post !border-0 !bg-primary-50/50 rounded-md"
+    >
+      <div class="font-medium">
+        <p class="post__username">&#64;{{post()!.user?.username}}</p>
+        <p class="post__title">{{ post()!.title }}</p>
+      </div>
+
+      <p class="post__body">{{ post()!.body }}</p>
+    </div>
+  }
+</div>

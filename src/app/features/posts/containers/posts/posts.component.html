@@ -86,6 +86,7 @@
               mat-row
               class="wrapper-table__row"
               *matRowDef="let row; columns: displayedColumns;"
+              (click)="openedPost.set(row)"
             ></tr>
           </table>
 
@@ -100,3 +101,8 @@
     </mat-card-content>
   </mat-card>
 </div>
+
+<sg-post-drawer
+  [post]="openedPost()"
+  (close)="openedPost.set(null)"
+/>
