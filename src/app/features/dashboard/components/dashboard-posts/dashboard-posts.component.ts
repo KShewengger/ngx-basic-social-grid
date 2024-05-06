@@ -7,8 +7,7 @@ import {
   MatCardTitle
 } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
-import { Source } from '@app/models';
-import { platformIconMapper } from '@app/utils';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { PostComponent } from '@features/common/post';
 import { PostsFacade } from '@states/posts';
 
@@ -24,7 +23,8 @@ import { PostsFacade } from '@states/posts';
     MatCardTitle,
     MatCardSubtitle,
     MatIcon,
-    PostComponent
+    PostComponent,
+    MatProgressSpinner
   ]
 })
 export class DashboardPostsComponent {
@@ -32,6 +32,5 @@ export class DashboardPostsComponent {
 
   public posts = this.postsFacade.topPosts;
   public totalPosts = this.postsFacade.totalTopPosts;
-
-  public readonly postIcon = platformIconMapper[Source.Posts];
+  public loading = this.postsFacade.loading;
 }

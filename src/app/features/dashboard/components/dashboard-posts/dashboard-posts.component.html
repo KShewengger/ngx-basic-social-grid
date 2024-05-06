@@ -8,9 +8,19 @@
     </mat-card-title>
   </mat-card-header>
 
-  <mat-card-content>
-    @for (post of posts(); track post.id) {
-      <sg-post [post]="post" />
-    }
-  </mat-card-content>
+  @if (loading()) {
+    <div class="wrapper-spinner">
+      <mat-progress-spinner
+        class="wrapper-spinner__spinner !w-8 !h-8"
+        color="primary"
+        mode="indeterminate">
+      </mat-progress-spinner>
+    </div>
+  } @else {
+    <mat-card-content>
+      @for (post of posts(); track post.id) {
+        <sg-post [post]="post" />
+      }
+    </mat-card-content>
+  }
 </mat-card>
