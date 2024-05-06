@@ -24,7 +24,7 @@
 
 .wrapper-form {
   &__search {
-    @apply border border-gray-200 text-xs py-2 px-2.5 w-3/12 rounded-md;
+    @apply border border-gray-200 text-xs py-2 px-2.5 w-60 rounded-md;
 
     &:focus-visible {
       @apply outline-primary-400;
