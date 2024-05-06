@@ -8,6 +8,8 @@ import { usersFeature } from '../reducers';
 export class UsersFacade {
   private store = inject(Store);
 
+  public loading = this.store.selectSignal(usersFeature.selectLoading);
+
   public users = this.store.selectSignal(usersFeature.selectAllUsers);
 
   public userEntities = this.store.selectSignal(usersFeature.selectUserEntities);
