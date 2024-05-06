@@ -8,13 +8,23 @@
     </mat-card-title>
   </mat-card-header>
 
-  <mat-card-content>
-    <div class="photos">
-      @for(photo of photos(); track photo.id) {
-        <sg-photo
-          [photo]="photo"
-        />
-      }
+  @if (loading()) {
+    <div class="wrapper-spinner">
+      <mat-progress-spinner
+        class="wrapper-spinner__spinner !w-8 !h-8"
+        color="primary"
+        mode="indeterminate">
+      </mat-progress-spinner>
     </div>
-  </mat-card-content>
+  } @else {
+    <mat-card-content>
+      <div class="photos">
+        @for(photo of photos(); track photo.id) {
+          <sg-photo
+            [photo]="photo"
+          />
+        }
+      </div>
+    </mat-card-content>
+  }
 </mat-card>

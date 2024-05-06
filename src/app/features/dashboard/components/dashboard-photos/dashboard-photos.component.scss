@@ -1,5 +1,5 @@
 .top-photos {
-  @apply flex flex-col gap-7 py-2 px-4;
+  @apply flex flex-col gap-7 py-2 px-4 min-h-[20rem];
 }
 
 .photos {
