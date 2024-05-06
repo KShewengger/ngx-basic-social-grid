@@ -2,11 +2,11 @@
   @if (showFullPhotoPreview()) {
     <img
       class="cursor-pointer"
-      [src]="photo()?.thumbnailUrl"
+      [src]="photo()?.url"
       [alt]="photo().title"
     >
 
-    <span class="text-sm">{{ photo().title }}</span>
+    <p class="photo__title text-center ">{{ photo().title }}</p>
   } @else {
     <img
       class="photo__img"

@@ -22,7 +22,10 @@
 
       <div class="wrapper-list">
         @for(photo of paginatedPhotos(); track photo.id) {
-          <sg-photo [photo]="photo" />
+          <sg-photo
+            [photo]="photo"
+            (click)="openedPhoto.set(photo)"
+          />
         }
       </div>
     </mat-card-content>
@@ -38,3 +41,15 @@
     />
   </mat-card>
 </div>
+
+<sg-drawer
+  [open]="!!openedPhoto()"
+  (openChange)="openedPhoto.set(null)"
+>
+  @if (openedPhoto()) {
+    <sg-photo
+      showFullPhotoPreview
+      [photo]="openedPhoto()!"
+    />
+  }
+</sg-drawer>
