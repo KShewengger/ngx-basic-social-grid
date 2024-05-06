@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { Photo } from '@app/models';
 import { PhotosFacade } from '@app/states/photos';
 import { filterDataBySearch } from '@app/utils';
@@ -27,7 +28,8 @@ import { PostComponent } from '@features/common/post';
     MatPaginator,
     PhotoComponent,
     DrawerComponent,
-    PostComponent
+    PostComponent,
+    MatProgressSpinner
   ]
 })
 export class PhotosComponent {
