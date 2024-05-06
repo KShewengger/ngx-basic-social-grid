@@ -1,19 +1,25 @@
 <div class="photo">
-  @if (showFullPhotoPreview()) {
-    <img
-      class="cursor-pointer"
-      [src]="photo()?.url"
-      [alt]="photo().title"
-    >
+  <div class="photo__wrapper">
+    @if (showFullPhotoPreview()) {
+      <img
+        width="600"
+        height="600"
+        [alt]="photo().title"
+        [ngSrc]="photoPreview()"
+      >
+    } @else {
+      <img
+        class="photo__img"
+        width="150"
+        height="150"
+        [alt]="photo().title"
+        [ngSrc]="photoPreview()"
+      >
+    }
+  </div>
 
-    <p class="photo__title text-center ">{{ photo().title }}</p>
-  } @else {
-    <img
-      class="photo__img"
-      [src]="photo()?.thumbnailUrl"
-      [alt]="photo().title"
-    >
-
-    <span class="photo__title w-11/12 truncate">{{ photo().title }}</span>
-  }
+  <p
+    class="photo__title text-center"
+    [ngClass]="showFullPhotoPreview() ? 'text-center' : 'w-8/12 xl:w-11/12 truncate'"
+  >{{ photo().title }}</p>
 </div>
