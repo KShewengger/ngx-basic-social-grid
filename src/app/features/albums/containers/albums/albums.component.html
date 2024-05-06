@@ -45,7 +45,7 @@
         class="!flex !justify-center"
         [length]="totalFilteredAlbums()"
         [pageIndex]="pageIndex()"
-        [pageSize]="pageSize"
+        [pageSize]="options.pageSize"
         (page)="pageEvent.set($event);"
       />
     }
