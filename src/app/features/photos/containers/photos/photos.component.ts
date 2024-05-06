@@ -1,14 +1,8 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  effect,
-  inject,
-  signal
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
+import { BaseFilter } from '@app/abstracts';
 import { Photo } from '@app/models';
 import { PhotosFacade } from '@app/states/photos';
 import { filterDataBySearch } from '@app/utils';
@@ -32,12 +26,9 @@ import { PostComponent } from '@features/common/post';
     MatProgressSpinner
   ]
 })
-export class PhotosComponent {
+export class PhotosComponent extends BaseFilter {
   private photosFacade = inject(PhotosFacade);
 
-  public search = signal<string>('');
-  public pageIndex = signal<number>(0);
-  public pageEvent = signal<PageEvent | null>(null);
   public openedPhoto = signal<Photo | null>(null);
 
   private photos = this.photosFacade.photos;
@@ -51,23 +42,7 @@ export class PhotosComponent {
     this.filteredPhotos().slice(this.startPage(), this.endPage())
   );
 
-  public startPage = computed(
-    () => (this.pageEvent()?.pageIndex ?? 0) * (this.pageEvent()?.pageSize ?? 0)
-  );
-
-  public endPage = computed(() => this.startPage() + (this.pageEvent()?.pageSize ?? this.pageSize));
-
-  private handlePaginationUpdate = effect(
-    () => {
-      this.pageIndex.set(this.pageEvent()?.pageIndex ?? 0);
-    },
-    { allowSignalWrites: true }
-  );
-
-  public readonly pageSize = 10;
-
-  public handleSearch(value: string) {
-    this.pageIndex.set(0);
-    this.search.set(value);
+  constructor() {
+    super({ pageSize: 10 });
   }
 }
