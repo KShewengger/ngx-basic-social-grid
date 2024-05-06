@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { booleanAttribute, Component, computed, inject, input } from '@angular/core';
 import { Album } from '@app/models';
 import { PhotosFacade } from '@app/states/photos';
@@ -9,7 +10,7 @@ import { AlbumsFacade } from '@states/albums';
   standalone: true,
   templateUrl: 'album.component.html',
   styleUrl: 'album.component.scss',
-  imports: [PhotoComponent]
+  imports: [PhotoComponent, NgOptimizedImage]
 })
 export class AlbumComponent {
   private albumsFacade = inject(AlbumsFacade);
