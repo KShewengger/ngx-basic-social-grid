@@ -13,22 +13,8 @@
       @for(photo of photos(); track photo.id) {
         <sg-photo
           [photo]="photo"
-          (click)="openedPhoto.set(photo)"
         />
       }
     </div>
   </mat-card-content>
 </mat-card>
-
-<sg-drawer
-  [open]="!!openedPhoto()"
-  (openChange)="openedPhoto.set(null)"
->
-  @if (openedPhoto()) {
-    <sg-photo
-      showFullPhotoPreview
-      [photo]="openedPhoto()!"
-    />
-  }
-</sg-drawer>
-
