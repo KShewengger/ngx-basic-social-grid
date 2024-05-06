@@ -108,7 +108,7 @@
         class="!flex !justify-center"
         [length]="totalFilteredPosts()"
         [pageIndex]="pageIndex()"
-        [pageSize]="pageSize"
+        [pageSize]="options.pageSize"
         (page)="pageEvent.set($event)"/>
     }
   </mat-card>

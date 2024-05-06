@@ -29,7 +29,6 @@ import { AlbumsFacade } from '@states/albums';
 export class AlbumsComponent extends BaseFilter {
   private albumsFacade = inject(AlbumsFacade);
 
-  public search = signal<string>('');
   public openedAlbum = signal<AlbumUser | null>(null);
 
   private albums = this.albumsFacade.usersAlbums;
@@ -45,10 +44,5 @@ export class AlbumsComponent extends BaseFilter {
 
   constructor() {
     super({ pageSize: 10 });
-  }
-
-  public handleSearch(value: string) {
-    this.pageIndex.set(0);
-    this.search.set(value);
   }
 }

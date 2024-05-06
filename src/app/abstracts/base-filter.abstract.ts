@@ -2,6 +2,7 @@ import { computed, effect, signal } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 
 export abstract class BaseFilter {
+  protected search = signal<string>('');
   protected pageIndex = signal<number>(0);
   protected pageEvent = signal<PageEvent | null>(null);
 
@@ -21,4 +22,9 @@ export abstract class BaseFilter {
   );
 
   constructor(public options: { pageSize: number }) {}
+
+  protected handleSearch(value: string) {
+    this.pageIndex.set(0);
+    this.search.set(value);
+  }
 }
