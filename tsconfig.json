@@ -37,6 +37,7 @@
       "@features/common/post": ["./src/app/features/common/post/index.ts"],
       "@features/common/album": ["./src/app/features/common/album/index.ts"],
       "@features/common/drawer": ["./src/app/features/common/drawer/index.ts"],
+      "@features/common/photo": ["./src/app/features/common/photo/index.ts"],
       "@states/app": ["./src/app/states/app/index.ts"],
       "@states/users": ["./src/app/states/users/index.ts"],
       "@states/posts": ["./src/app/states/posts/index.ts"],

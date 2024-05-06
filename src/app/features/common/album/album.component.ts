@@ -1,7 +1,7 @@
-import { SlicePipe } from '@angular/common';
 import { booleanAttribute, Component, computed, inject, input } from '@angular/core';
 import { Album } from '@app/models';
 import { PhotosFacade } from '@app/states/photos';
+import { PhotoComponent } from '@features/common/photo';
 import { AlbumsFacade } from '@states/albums';
 
 @Component({
@@ -9,7 +9,7 @@ import { AlbumsFacade } from '@states/albums';
   standalone: true,
   templateUrl: 'album.component.html',
   styleUrl: 'album.component.scss',
-  imports: [SlicePipe]
+  imports: [PhotoComponent]
 })
 export class AlbumComponent {
   private albumsFacade = inject(AlbumsFacade);
@@ -26,6 +26,11 @@ export class AlbumComponent {
   });
 
   public title = computed(() => this.album()?.title ?? '');
+
+  public albumOwner = computed(() => {
+    if (!this.album()) return null;
+    return this.albumsFacade.albumOwner(this.album()!.id);
+  });
 
   public coverPhoto = computed(() => this.albumPhotos()[0]?.thumbnailUrl ?? '');
 

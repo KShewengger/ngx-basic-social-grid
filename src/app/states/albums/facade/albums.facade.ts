@@ -24,4 +24,7 @@ export class AlbumsFacade {
 
   public userAlbums = (userId: Album['userId']) =>
     this.store.selectSignal(albumsFeature.selectUserAlbums(userId))();
+
+  public albumOwner = (id: Album['id']) =>
+    this.store.selectSignal(albumsFeature.selectAlbumOwner(id))();
 }

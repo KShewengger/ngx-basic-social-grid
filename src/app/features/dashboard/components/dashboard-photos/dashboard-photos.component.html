@@ -11,9 +11,7 @@
   <mat-card-content>
     <div class="photos">
       @for(photo of photos(); track photo.id) {
-        <div class="photo">
-          <img [src]="photo.thumbnailUrl" [alt]="photo.title" />
-        </div>
+        <sg-photo [photo]="photo" />
       }
     </div>
   </mat-card-content>

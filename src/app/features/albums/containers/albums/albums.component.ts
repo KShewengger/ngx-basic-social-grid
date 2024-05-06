@@ -61,7 +61,7 @@ export class AlbumsComponent {
     { allowSignalWrites: true }
   );
 
-  public readonly pageSize = 5;
+  public readonly pageSize = 8;
 
   public handleSearch(value: string) {
     this.pageIndex.set(0);

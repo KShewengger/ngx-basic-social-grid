@@ -61,12 +61,23 @@ export const albumsFeature = createFeature({
         albums.filter((album) => album.user?.id === userId)
       );
 
+    const selectAlbumOwner = (albumId: Album['id']) =>
+      createSelector(
+        commonSelectors.selectAlbum(albumId),
+        usersFeature.selectUserEntities,
+        (album, userEntities) => {
+          if (!album) return null;
+          return userEntities[album.userId];
+        }
+      );
+
     return {
       ...commonSelectors,
       selectAlbumsWithUsers,
       selectAlbumsWithUsersEntities,
       selectAlbumWithUser,
-      selectUserAlbums
+      selectUserAlbums,
+      selectAlbumOwner
     };
   }
 });
