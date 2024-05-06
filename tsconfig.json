@@ -25,10 +25,6 @@
     "paths": {
       "@app/*": ["./src/app/*"],
       "@environments/*": ["./src/environments/*"],
-      "@app/models": ["./src/app/models/index.ts"],
-      "@app/utils": ["./src/app/utils/index.ts"],
-      "@app/services": ["./src/app/services/index.ts"],
-      "@app/constants": ["./src/app/constants/index.ts"],
       "@features/albums": ["./src/app/features/albums/index.ts"],
       "@features/dashboard": ["./src/app/features/dashboard/index.ts"],
       "@features/photos": ["./src/app/features/photos/index.ts"],

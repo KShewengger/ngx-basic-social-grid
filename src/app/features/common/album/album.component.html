@@ -17,11 +17,16 @@
   </div>
 } @else {
   <div class="album">
-    <img
-      alt="cover-image"
-      class="album__cover"
-      [src]="coverPhoto()"
-    >
+    <div class="album__wrapper">
+      <img
+        priority
+        alt="cover-image"
+        class="album__cover"
+        width="150"
+        height="150"
+        [ngSrc]="coverPhoto()"
+      >
+    </div>
     <span class="album__title w-11/12 truncate">{{ title() }}</span>
     <span class="album__total">{{ totalPhotos() }} photos</span>
   </div>

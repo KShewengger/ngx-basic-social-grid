@@ -1,13 +1,7 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  effect,
-  inject,
-  signal
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
 import {
   MatCell,
@@ -22,6 +16,7 @@ import {
   MatTable
 } from '@angular/material/table';
 import { MatTooltip } from '@angular/material/tooltip';
+import { BaseFilter } from '@app/abstracts';
 import { PostUser } from '@app/models';
 import { ExtractUserInitialsPipe, filterDataBySearch, SortDataByPropPipe } from '@app/utils';
 import { DrawerComponent } from '@features/common/drawer';
@@ -51,20 +46,19 @@ import { PostsFacade } from '@states/posts';
     MatTooltip,
     MatSort,
     MatSortHeader,
+    MatProgressSpinner,
     DrawerComponent,
+    PostComponent,
     ExtractUserInitialsPipe,
-    SortDataByPropPipe,
-    PostComponent
+    SortDataByPropPipe
   ]
 })
-export class PostsComponent {
+export class PostsComponent extends BaseFilter {
   private postsFacade = inject(PostsFacade);
 
   private posts = this.postsFacade.usersPosts;
+  public loading = this.postsFacade.loading;
 
-  public search = signal<string>('');
-  public pageIndex = signal<number>(0);
-  public pageEvent = signal<PageEvent | null>(null);
   public sortEvent = signal<Sort | null>(null);
   public openedPost = signal<PostUser | null>(null);
 
@@ -76,24 +70,9 @@ export class PostsComponent {
 
   public totalFilteredPosts = computed(() => this.filteredPosts().length);
 
-  public startPage = computed(
-    () => (this.pageEvent()?.pageIndex ?? 0) * (this.pageEvent()?.pageSize ?? 0)
-  );
-
-  public endPage = computed(() => this.startPage() + (this.pageEvent()?.pageSize ?? this.pageSize));
-
-  private handlePaginationUpdate = effect(
-    () => {
-      this.pageIndex.set(this.pageEvent()?.pageIndex ?? 0);
-    },
-    { allowSignalWrites: true }
-  );
-
   public readonly displayedColumns = ['title', 'body', 'avatar'];
-  public readonly pageSize = 5;
 
-  public handleSearch(value: string) {
-    this.pageIndex.set(0);
-    this.search.set(value);
+  constructor() {
+    super({ pageSize: 5 });
   }
 }

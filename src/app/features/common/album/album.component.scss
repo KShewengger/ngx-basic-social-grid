@@ -12,7 +12,11 @@
   }
 
   &__cover {
-    @apply rounded-md opacity-70 group-hover:opacity-100;
+    @apply rounded-md opacity-70 w-full h-full group-hover:opacity-100;
+  }
+
+  &__wrapper {
+    @apply max-w-full max-h-full bg-gray-50 w-[150px] h-[150px];
   }
 
   &__title {

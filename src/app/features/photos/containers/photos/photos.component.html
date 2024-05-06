@@ -7,38 +7,48 @@
       </p>
     </mat-card-header>
 
-    <mat-card-content>
-      <div class="wrapper-content">
-        <div class="wrapper-form">
-          <input
-            type="text"
-            placeholder="Search"
-            class="wrapper-form__search"
-            #searchInput
-            (input)="handleSearch(searchInput.value)"
-          />
+    @if (loading()) {
+      <div class="wrapper-spinner">
+        <mat-progress-spinner
+          class="wrapper-spinner__spinner !w-8 !h-8"
+          color="primary"
+          mode="indeterminate">
+        </mat-progress-spinner>
+      </div>
+    } @else {
+      <mat-card-content>
+        <div class="wrapper-content">
+          <div class="wrapper-form">
+            <input
+              type="text"
+              placeholder="Search"
+              class="wrapper-form__search"
+              #searchInput
+              (input)="handleSearch(searchInput.value)"
+            />
+          </div>
         </div>
-      </div>
 
-      <div class="wrapper-list">
-        @for(photo of paginatedPhotos(); track photo.id) {
-          <sg-photo
-            [photo]="photo"
-            (click)="openedPhoto.set(photo)"
-          />
-        }
-      </div>
-    </mat-card-content>
+        <div class="wrapper-list">
+          @for(photo of paginatedPhotos(); track photo.id) {
+            <sg-photo
+              [photo]="photo"
+              (click)="openedPhoto.set(photo)"
+            />
+          }
+        </div>
+      </mat-card-content>
 
-    <mat-paginator
-      showFirstLastButtons
-      hidePageSize
-      class="!flex !justify-center"
-      [length]="totalFilteredPhotos()"
-      [pageIndex]="pageIndex()"
-      [pageSize]="pageSize"
-      (page)="pageEvent.set($event);"
-    />
+      <mat-paginator
+        showFirstLastButtons
+        hidePageSize
+        class="!flex !justify-center"
+        [length]="totalFilteredPhotos()"
+        [pageIndex]="pageIndex()"
+        [pageSize]="options.pageSize"
+        (page)="pageEvent.set($event);"
+      />
+    }
   </mat-card>
 </div>
 
