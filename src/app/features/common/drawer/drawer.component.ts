@@ -1,4 +1,4 @@
-import { Component, effect, inject, model, Renderer2 } from '@angular/core';
+import { Component, DestroyRef, effect, inject, model, Renderer2 } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { PostComponent } from '@app/features/common/post/post.component';
 
@@ -11,6 +11,7 @@ import { PostComponent } from '@app/features/common/post/post.component';
 })
 export class DrawerComponent {
   private renderer = inject(Renderer2);
+  private destroyRef = inject(DestroyRef);
 
   public open = model<boolean>(false);
 
@@ -21,4 +22,8 @@ export class DrawerComponent {
       this.renderer.removeClass(document.body, 'disable-scroll');
     }
   });
+
+  private onDestroy = this.destroyRef.onDestroy(() =>
+    this.renderer.removeClass(document.body, 'disable-scroll')
+  );
 }
