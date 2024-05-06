@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { AlbumUser } from '@app/models';
 import { filterDataBySearch } from '@app/utils';
 import { AlbumComponent } from '@features/common/album';
@@ -27,7 +28,8 @@ import { AlbumsFacade } from '@states/albums';
     AlbumComponent,
     MatPaginator,
     DrawerComponent,
-    PostComponent
+    PostComponent,
+    MatProgressSpinner
   ]
 })
 export class AlbumsComponent {
@@ -39,6 +41,7 @@ export class AlbumsComponent {
   public openedAlbum = signal<AlbumUser | null>(null);
 
   private albums = this.albumsFacade.usersAlbums;
+  public loading = this.albumsFacade.loading;
 
   public filteredAlbums = computed(() => filterDataBySearch(this.albums(), 'title', this.search()));
 
