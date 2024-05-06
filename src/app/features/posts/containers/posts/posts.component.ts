@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader } from '@angular/material/card';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { MatSort, MatSortHeader, Sort } from '@angular/material/sort';
 import {
   MatCell,
@@ -51,16 +52,18 @@ import { PostsFacade } from '@states/posts';
     MatTooltip,
     MatSort,
     MatSortHeader,
+    MatProgressSpinner,
     DrawerComponent,
+    PostComponent,
     ExtractUserInitialsPipe,
-    SortDataByPropPipe,
-    PostComponent
+    SortDataByPropPipe
   ]
 })
 export class PostsComponent {
   private postsFacade = inject(PostsFacade);
 
   private posts = this.postsFacade.usersPosts;
+  public loading = this.postsFacade.loading;
 
   public search = signal<string>('');
   public pageIndex = signal<number>(0);
