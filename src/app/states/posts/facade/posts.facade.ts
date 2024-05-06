@@ -7,6 +7,8 @@ import { Store } from '@ngrx/store';
 export class PostsFacade {
   private store = inject(Store);
 
+  public loading = this.store.selectSignal(postsFeature.selectLoading);
+
   public posts = this.store.selectSignal(postsFeature.selectAllPosts);
 
   public usersPosts = this.store.selectSignal(postsFeature.selectPostsWithUsers);

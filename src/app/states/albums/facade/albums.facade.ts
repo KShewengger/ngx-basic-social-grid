@@ -8,6 +8,8 @@ import { albumsFeature } from '../reducers';
 export class AlbumsFacade {
   private store = inject(Store);
 
+  public loading = this.store.selectSignal(albumsFeature.selectLoading);
+
   public albums = this.store.selectSignal(albumsFeature.selectAllAlbums);
 
   public usersAlbums = this.store.selectSignal(albumsFeature.selectAlbumsWithUsers);

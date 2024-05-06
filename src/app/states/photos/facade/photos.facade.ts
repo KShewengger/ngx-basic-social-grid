@@ -7,6 +7,8 @@ import { Store } from '@ngrx/store';
 export class PhotosFacade {
   private store = inject(Store);
 
+  public loading = this.store.selectSignal(photosFeature.selectLoading);
+
   public photos = this.store.selectSignal(photosFeature.selectAllPhotos);
 
   public photoEntities = this.store.selectSignal(photosFeature.selectPhotoEntities);

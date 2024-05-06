@@ -2,6 +2,7 @@
   <div class="photo__wrapper">
     @if (showFullPhotoPreview()) {
       <img
+        priority
         width="600"
         height="600"
         [alt]="photo().title"
@@ -9,6 +10,7 @@
       >
     } @else {
       <img
+        priority
         class="photo__img"
         width="150"
         height="150"

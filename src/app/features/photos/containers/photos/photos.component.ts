@@ -39,6 +39,7 @@ export class PhotosComponent {
   public openedPhoto = signal<Photo | null>(null);
 
   private photos = this.photosFacade.photos;
+  public loading = this.photosFacade.loading;
 
   public filteredPhotos = computed(() => filterDataBySearch(this.photos(), 'title', this.search()));
 
